@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-    const LIVE_URL = 'd4bit.github.io';
+    const LIVE_URL = 'https://d4bit.github.io';
 
 // https://astro.build/config
 export default defineConfig({
