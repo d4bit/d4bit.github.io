@@ -33,6 +33,8 @@ Para configurar el proyecto localmente, sigue estos pasos:
 
 El proyecto utiliza las siguientes dependencias:
 
+- **Node.js**: Un entorno de ejecución para JavaScript en el servidor. Asegúrate de tener instalada la versión 14.x o superior.
+- **npm**: El gestor de paquetes de Node.js, que se utiliza para instalar las dependencias del proyecto.
 - **Astro**: Un framework moderno para construir sitios web estáticos.
 - **Tailwind CSS**: Un framework de CSS para estilizar el sitio de manera rápida y eficiente.
 
