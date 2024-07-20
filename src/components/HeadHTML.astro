@@ -1,0 +1,18 @@
+---
+interface Props {
+    //Para hacerlo obligatorio hay que meterlo en la interfaz
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portfolio digital de D4bit" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="ima ge/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/" as="font" type="font/woff" crossorigin />
+    <!-- TODO: ADD FONTS -->
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+</head>
