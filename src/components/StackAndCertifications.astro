@@ -1,97 +1,95 @@
 ---
-// src/components/StackAndCertifications.astro
+// src/components/StackAndCertifications.astro (Añadido 'dark:' en colores)
 import ExperienceTimeline from './ExperienceTimeline.astro';
 ---
-<section id="stack" class="py-24 max-w-7xl mx-auto px-4">
+<section id="stack" class="py-24 max-w-7xl mx-auto px-4 bg-white dark:bg-gray-800 transition-colors duration-500">
     <div class="grid md:grid-cols-2 gap-20">
         
         <div>
-            <h2 class="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3 transition-colors">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-3 transition-colors">
                 <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Tech Stack
             </h2>
             <div class="flex flex-wrap gap-3 mb-20">
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-red-100 text-red-800 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
+                <span class="inline-flex items-center gap-3 px-5 py-2 bg-red-100 text-red-800 dark:text-red-300 dark:bg-red-900/50 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
                     <img src="https://img.logo-storage.com/salesforce.png" alt="Sales Cloud logo" class="w-4 h-4 object-contain flex-shrink-0">
                     Sales Cloud
                 </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-purple-100 text-purple-800 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
+                <span class="inline-flex items-center gap-3 px-5 py-2 bg-purple-100 text-purple-800 dark:text-purple-300 dark:bg-purple-900/50 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
                     <img src="https://img.logo-storage.com/lwc.png" alt="LWC logo" class="w-4 h-4 object-contain flex-shrink-0">
                     LWC
                 </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-green-100 text-green-800 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
+                <span class="inline-flex items-center gap-3 px-5 py-2 bg-green-100 text-green-800 dark:text-green-300 dark:bg-green-900/50 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
                     <img src="https://img.logo-storage.com/mulesoft.png" alt="Mulesoft logo" class="w-4 h-4 object-contain flex-shrink-0">
                     Mulesoft
                 </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-yellow-100 text-yellow-800 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
+                <span class="inline-flex items-center gap-3 px-5 py-2 bg-yellow-100 text-yellow-800 dark:text-yellow-300 dark:bg-yellow-900/50 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
                     <img src="https://img.logo-storage.com/devops.png" alt="DevOps Center logo" class="w-4 h-4 object-contain flex-shrink-0">
                     DevOps Center
                 </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-blue-100 text-blue-800 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
+                <span class="inline-flex items-center gap-3 px-5 py-2 bg-blue-100 text-blue-800 dark:text-blue-300 dark:bg-blue-900/50 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow-md hover:scale-[1.02] cursor-default">
                     <img src="https://img.logo-storage.com/apex.png" alt="Apex logo" class="w-4 h-4 object-contain flex-shrink-0">
                     Apex
                 </span>
             </div>
             
-            <h2 class="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3 transition-colors">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-3 transition-colors">
                 <span class="w-8 h-1 bg-blue-600 rounded-full"></span> Certificaciones
             </h2>
             <div class="mb-16">
-                <div class="bg-gray-50/50 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 shadow-inner transition-colors">
+                <div class="bg-gray-50/50 dark:bg-gray-700/50 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 dark:border-gray-600 shadow-inner transition-colors">
                     
-                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-50/50 to-transparent z-10 pointer-events-none transition-colors"></div>
+                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-50/50 dark:from-gray-700/50 to-transparent z-10 pointer-events-none transition-colors"></div>
                     
                     <div class="animate-vertical-scroll space-y-4 py-2">
                         <a href="https://trailhead.salesforce.com/credentials/architectoverview" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
+                           class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-4 hover:shadow-md hover:border-blue-200 dark:hover:border-blue-400 hover:translate-x-2 transition-all duration-300 group">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-lg p-1 flex items-center justify-center border border-gray-50 group-hover:bg-blue-50 transition-colors">
+                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center border border-gray-50 dark:border-gray-600 group-hover:bg-blue-50 transition-colors">
                                     <img src="https://tu-url.com/logo-cta.png" alt="Salesforce Certified Technical Architect (CTA)" class="max-w-full max-h-full object-contain overflow-hidden rounded">
                                 </div>
                                 <div class="flex-grow">
-                                    <p class="font-bold text-gray-800 text-sm leading-tight group-hover:text-blue-600 transition-colors">Salesforce Certified Technical Architect (CTA)</p>
-                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">Ver Credencial <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                    <p class="font-bold text-gray-800 dark:text-white text-sm leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Salesforce Certified Technical Architect (CTA)</p>
+                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
+                                        Ver Credencial 
+                                        <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://trailhead.salesforce.com/credentials/applicationarchitect" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
+
+                                                <a href="https://trailhead.salesforce.com/credentials/architectoverview" target="_blank" rel="noopener noreferrer" 
+                           class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-4 hover:shadow-md hover:border-blue-200 dark:hover:border-blue-400 hover:translate-x-2 transition-all duration-300 group">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-lg p-1 flex items-center justify-center border border-gray-50 group-hover:bg-blue-50 transition-colors">
-                                    <img src="https://tu-url.com/logo-app-arch.png" alt="Application Architect" class="max-w-full max-h-full object-contain overflow-hidden rounded">
+                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center border border-gray-50 dark:border-gray-600 group-hover:bg-blue-50 transition-colors">
+                                    <img src="https://tu-url.com/logo-cta.png" alt="Salesforce Certified Technical Architect (CTA)" class="max-w-full max-h-full object-contain overflow-hidden rounded">
                                 </div>
                                 <div class="flex-grow">
-                                    <p class="font-bold text-gray-800 text-sm leading-tight group-hover:text-blue-600 transition-colors">Application Architect</p>
-                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">Ver Credencial <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                    <p class="font-bold text-gray-800 dark:text-white text-sm leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Salesforce Certified Technical Architect (CTA)</p>
+                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
+                                        Ver Credencial 
+                                        <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://trailhead.salesforce.com/credentials/systemarchitect" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
+                                                <a href="https://trailhead.salesforce.com/credentials/architectoverview" target="_blank" rel="noopener noreferrer" 
+                           class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-4 hover:shadow-md hover:border-blue-200 dark:hover:border-blue-400 hover:translate-x-2 transition-all duration-300 group">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-lg p-1 flex items-center justify-center border border-gray-50 group-hover:bg-blue-50 transition-colors">
-                                    <img src="https://tu-url.com/logo-sys-arch.png" alt="System Architect" class="max-w-full max-h-full object-contain overflow-hidden rounded">
+                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center border border-gray-50 dark:border-gray-600 group-hover:bg-blue-50 transition-colors">
+                                    <img src="https://tu-url.com/logo-cta.png" alt="Salesforce Certified Technical Architect (CTA)" class="max-w-full max-h-full object-contain overflow-hidden rounded">
                                 </div>
                                 <div class="flex-grow">
-                                    <p class="font-bold text-gray-800 text-sm leading-tight group-hover:text-blue-600 transition-colors">System Architect</p>
-                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">Ver Credencial <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                    <p class="font-bold text-gray-800 dark:text-white text-sm leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Salesforce Certified Technical Architect (CTA)</p>
+                                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
+                                        Ver Credencial 
+                                        <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://trailhead.salesforce.com/credentials/architectoverview" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
-                           ... (Contenido repetido)
-                        </a>
-                        <a href="https://trailhead.salesforce.com/credentials/applicationarchitect" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
-                            ... (Contenido repetido)
-                        </a>
-                        <a href="https://trailhead.salesforce.com/credentials/systemarchitect" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4 hover:shadow-md hover:border-blue-200 hover:translate-x-2 transition-all duration-300 group">
-                            ... (Contenido repetido)
-                        </a>
-                    </div>
+                        </div>
                     
-                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50/50 to-transparent z-10 pointer-events-none transition-colors"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50/50 dark:from-gray-700/50 to-transparent z-10 pointer-events-none transition-colors"></div>
                 </div>
             </div>
         </div>

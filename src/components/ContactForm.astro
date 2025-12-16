@@ -1,37 +1,37 @@
 ---
-// src/components/ContactForm.astro
+// src/components/ContactForm.astro (Añadido 'dark:' en colores)
 ---
-<section id="contact" class="py-20 px-4 transition-colors duration-500 bg-gradient-to-br from-gray-50 to-white">
+<section id="contact" class="py-20 px-4 transition-colors duration-500 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
     <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">
+        <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900 dark:text-white">
             ¿Hablamos?
         </h2>
 
-        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl transition-all duration-500">
+        <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-3xl shadow-2xl dark:shadow-none transition-all duration-500">
             
             <form action="TU_ENDPOINT_DE_FORMULARIO_AQUÍ" method="POST" class="space-y-6">
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <input type="text" id="name" name="name" placeholder="Nombre Completo" required 
-                           class="w-full p-3 border border-gray-200 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 transition-all duration-300 shadow-sm"
+                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white transition-all duration-300 shadow-sm"
                     >
                     <input type="email" id="email" name="email" placeholder="Tu Email" required 
-                           class="w-full p-3 border border-gray-200 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 transition-all duration-300 shadow-sm"
+                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white transition-all duration-300 shadow-sm"
                     >
                     <input type="tel" id="phone" name="phone" placeholder="Tu Teléfono (Opcional)" 
-                           class="w-full p-3 border border-gray-200 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 transition-all duration-300 shadow-sm"
+                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white transition-all duration-300 shadow-sm"
                     >
                 </div>
 
                 <div>
                     <input type="text" id="subject" name="subject" placeholder="Asunto" required 
-                           class="w-full p-3 border border-gray-200 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 transition-all duration-300 shadow-sm"
+                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white transition-all duration-300 shadow-sm"
                     >
                 </div>
                 
                 <div>
                     <textarea id="message" name="message" rows="5" placeholder="Mensaje..." required 
-                              class="w-full p-3 border-2 border-blue-500 rounded-xl focus:ring-blue-500 focus:border-blue-600 bg-gray-50 transition-all duration-300 resize-y shadow-md"
+                              class="w-full p-3 border-2 border-blue-500 rounded-xl focus:ring-blue-500 focus:border-blue-600 bg-gray-50 dark:bg-gray-800 dark:text-white transition-all duration-300 resize-y shadow-md"
                     ></textarea>
                 </div>
 

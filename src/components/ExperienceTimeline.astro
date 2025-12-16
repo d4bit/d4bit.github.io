@@ -1,28 +1,27 @@
 ---
-// src/components/ExperienceTimeline.astro
+// src/components/ExperienceTimeline.astro (Añadido 'dark:' en colores)
 ---
 <div class="relative">
     <div class="sticky top-24">
-        <h2 class="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3 transition-colors">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-3 transition-colors">
              <span class="w-8 h-1 bg-indigo-600 rounded-full"></span> Experiencia Laboral
         </h2>
-        <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border border-gray-100 transition-colors">
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-600 transition-colors">
             <div class="space-y-0">
                 
-                <div class="relative pl-8 pb-10 border-l-2 border-blue-100 last:border-0 hover:border-blue-300 transition-colors group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white shadow-sm group-hover:scale-125 transition-transform"></div>
-                    <h3 class="text-xl font-bold text-gray-900">Senior Manager & Architect</h3>
-                    <p class="text-blue-600 font-medium mb-2">Consultora Big 4 | 2020 - Presente</p>
-                    <p class="text-gray-600 leading-relaxed">Liderando transformaciones digitales multi-cloud.</p>
+                <div class="relative pl-8 pb-10 border-l-2 border-blue-100 dark:border-blue-900/50 last:border-0 hover:border-blue-300 dark:hover:border-blue-500 transition-colors group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-gray-700 shadow-sm group-hover:scale-125 transition-transform"></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Senior Manager & Architect</h3>
+                    <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">Consultora Big 4 | 2020 - Presente</p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Liderando transformaciones digitales multi-cloud.</p>
                 </div>
                 
-                <div class="relative pl-8 pb-10 border-l-2 border-blue-100 last:border-0 hover:border-blue-300 transition-colors group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white shadow-sm group-hover:scale-125 transition-transform"></div>
-                    <h3 class="text-xl font-bold text-gray-900">Salesforce Lead Developer</h3>
-                    <p class="text-blue-600 font-medium mb-2">Tech Startup | 2017 - 2020</p>
-                    <p class="text-gray-600 leading-relaxed">Implementación de CI/CD y desarrollo de LWC complejos.</p>
+                <div class="relative pl-8 pb-10 border-l-2 border-blue-100 dark:border-blue-900/50 last:border-0 hover:border-blue-300 dark:hover:border-blue-500 transition-colors group">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-gray-700 shadow-sm group-hover:scale-125 transition-transform"></div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Salesforce Lead Developer</h3>
+                    <p class="text-blue-600 dark:text-blue-400 font-medium mb-2">Tech Startup | 2017 - 2020</p>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Implementación de CI/CD y desarrollo de LWC complejos.</p>
                 </div>
-
             </div>
         </div>
     </div>
