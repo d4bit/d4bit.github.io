@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+body { font-family: 'Inter', sans-serif; } 
+.animate-fade-in-up { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animate-fade-in-delayed { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s; }
+.marquee-container { overflow: hidden; } 
