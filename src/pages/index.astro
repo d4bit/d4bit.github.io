@@ -1,5 +1,11 @@
 ---
-import Portfolio from '../layouts/Portfolio.astro';
+import '../styles/global.css'; 
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ClientMarquee from '../components/ClientMarquee.astro';
+import StackAndCertifications from '../components/StackAndCertifications.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
@@ -9,7 +15,13 @@ import Portfolio from '../layouts/Portfolio.astro';
     <title>David Román - Salesforce Technical Architect</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800">
-	<Portfolio></Portfolio>
+    <Header />
+    <main class="bg-white text-gray-800" id="main-content">
+        <HeroSection />
+        <ClientMarquee />
+        <StackAndCertifications />
+        <ContactForm />
+    </main>
+	<Footer />
 </body>
 </html>
