@@ -1,7 +1,27 @@
 ---
-// src/components/HeroSection.astro (Añadido 'dark:' en colores y fondo)
+// src/components/HeroSection.astro
 ---
-<section id="inicio" class="pt-20 lg:pt-0 min-h-screen flex items-center pb-12 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden transition-colors duration-500">
+<section id="inicio" class="pt-20 lg:pt-0 min-h-screen flex items-center pb-12 relative overflow-hidden transition-colors duration-500 bg-[#0a0a0a]">
+    
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <img 
+            src="https://abhimanyud3dx.github.io/superqbit-static-resources/resources/images/bg/bg1.png" 
+            alt="Background Grid" 
+            class="w-full h-full object-cover dark:opacity-45 "
+        />
+    </div>
+
+    <div class="hidden lg:block absolute inset-0 z-[2] pointer-events-none">
+        <div class="avioneta-container absolute top-1/3 left-[-100px]">
+            <div class="flex flex-col items-center">
+                <svg class="w-10 h-10 text-blue-400/40 -rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21,16V14L13,9V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V9L2,14V16L10,13.5V19L8,20.5V22L11.5,21L15,22V20.5L13,19V13.5L21,16Z" />
+                </svg>
+                <div class="w-20 h-[1px] bg-gradient-to-l from-blue-400/10 to-transparent mt-1 mr-8"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 w-full grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8 animate-fade-in-up z-10 order-2 lg:order-1">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 font-bold tracking-wider uppercase transition-colors">
@@ -30,7 +50,7 @@
             </div>
         </div>
 
-        <div class="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-delayed">
+        <div class="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-delayed z-10 ">
             <div class="relative w-[350px] md:w-[450px] aspect-[4/5] min-w-64"> 
                 
                 <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800" 
@@ -54,7 +74,7 @@
                     <p class="text-sm text-gray-300 leading-tight">Certificaciones Oficiales Salesforce</p>
                 </div>
 
-                <div class="absolute top-12 -right-10 z-20 bg-white dark:bg-gray-700 p-4 rounded-xl shadow-xl animate-float-fast border border-gray-100 dark:border-gray-600 hidden md:block transform rotate-3 transition-colors duration-500">
+                <div class="absolute top-12 -right-10 z-20 bg-white dark:bg-gray-700 p-4 rounded-xl shadow-xl animate-float-fast animate-float-medium max-w-[180px] border border-gray-100 dark:border-gray-600 hidden md:block transform rotate-3 transition-colors duration-500">
                     <div class="text-center">
                         <p class="text-2xl font-bold text-indigo-600">+30</p>
                         <p class="text-[10px] text-gray-400 dark:text-gray-300 uppercase font-bold tracking-wider">Proyectos</p>
@@ -67,3 +87,32 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Animación de la Avioneta */
+    .avioneta-container {
+        animation: fly-across 30s linear infinite;
+    }
+
+    @keyframes fly-across {
+        0% { transform: translate(-10vw, 0) rotate(5deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translate(110vw, -150px) rotate(-5deg); opacity: 0; }
+    }
+
+    /* Animaciones de los badges */
+    @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes float-medium { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    .animate-float-slow { animation: float-slow 5s ease-in-out infinite; }
+    .animate-float-medium { animation: float-medium 4s ease-in-out infinite; }
+
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-fade-in-delayed { animation: fadeIn 1.2s ease-out forwards; opacity: 0; }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
