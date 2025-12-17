@@ -1,10 +1,11 @@
 ---
-// src/components/Header.astro (Añadido 'dark:' en colores y fondo)
+// src/components/Header.astro
 import SocialIcons from './SocialIcons.astro';
-import ThemeToggle from './ThemeToggle.astro'; // Asegúrate de que esto está importado
+import ThemeToggle from './ThemeToggle.astro';
 ---
+
 <div id="app-header">
-    <nav class="w-full backdrop-blur-md bg-white dark:bg-gray-900 transition-colors duration-500"> 
+    <nav class="w-full top-0 z-50 backdrop-blur-md bg-white dark:bg-gray-900 transition-colors duration-500 border-b border-gray-200 dark:border-gray-800"> 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
@@ -25,16 +26,36 @@ import ThemeToggle from './ThemeToggle.astro'; // Asegúrate de que esto está i
                     <SocialIcons />
                     <ThemeToggle />
                     
-                    <button aria-label="Abrir menú" 
-                            class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 md:hidden">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
         
-        <div id="mobile-menu" class="hidden"></div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                    Inicio
+                </a>
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                    Contactar
+                </a>
+            </div>
+        </div>
     </nav>
 </div>
+
+<script>
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    }
+</script>
