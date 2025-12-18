@@ -1,27 +1,45 @@
 ---
 // src/components/ExperienceTimeline.astro
 
-// 1. Definimos el set de información (puedes mover esto a un JSON externo luego)
 const experiences = [
     {
-        role: "Senior Manager & Architect",
-        company: "Consultora Big 4",
-        period: "2020 - Presente",
-        description: "Liderando transformaciones digitales multi-cloud y arquitectura técnica compleja.",
+        role: "Salesforce Developer",
+        company: "SIROCCO GROUP",
+        period: "12/2025 - Presente",
+        logo: "https://pbcdn1.podbean.com/imglogo/image-logo/8941019/sirocco_logo_02.png",
+        description: "Desarrollo de soluciones escalables para clientes internacionales bajo metodología SAFe. Especializado en Apex, LWC e integraciones complejas con despliegue mediante Copado.",
         isCurrent: true
     },
     {
-        role: "Salesforce Lead Developer",
-        company: "Tech Startup",
-        period: "2017 - 2020",
-        description: "Implementación de CI/CD, gobierno de código y desarrollo de LWC complejos para aplicaciones financieras.",
+        role: "Salesforce Architect & Technical Lead",
+        company: "INETUM",
+        period: "06/2025 - 12/2025",
+        logo: "https://www.inetum.com//themes/custom/web_ui/favicon.ico",
+        description: "Referente técnico en arquitectura Salesforce, diseñando soluciones seguras y escalables. Liderazgo de equipos técnicos y definición de estrategias de CI/CD y evolución de sistemas.",
+        isCurrent: false
+    },
+    {
+        role: "Technical Lead",
+        company: "OMEGA CRM CONSULTING",
+        period: "12/2024 - 06/2025",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Liderazgo en el diseño de soluciones avanzadas integrando Agentforce. Mentoría de perfiles junior, optimización de procesos críticos y revisión de código bajo estándares CI/CD.",
+        isCurrent: false
+    },
+    {
+        role: "Technical Consultant & Developer",
+        company: "OMEGA CRM CONSULTING",
+        period: "01/2023 - 11/2024",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Implementación de automatizaciones e integraciones multisectoriales. Responsable de migraciones de datos, configuración de entornos seguros y desarrollo avanzado en Apex y LWC.",
         isCurrent: false
     },
     {
         role: "Salesforce Developer",
-        company: "Cloud Partner",
-        period: "2015 - 2017",
-        description: "Configuración avanzada de Sales & Service Cloud y automatización con Apex/Flow.",
+        company: "OMEGA CRM CONSULTING",
+        period: "03/2022 - 01/2023",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Personalización de la plataforma y automatización de procesos de negocio enfocados en Sales y Service Cloud, garantizando soluciones mantenibles y escalables.",
         isCurrent: false
     }
 ];
@@ -32,25 +50,35 @@ const experiences = [
         <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3 transition-colors">
              <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Experiencia Laboral
         </h2>
-        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
+        <div class="bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 transition-colors">
             <div class="space-y-0">
                 
                 {experiences.map((job) => (
-                    <div class="relative pl-8 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
+                    <div class="relative pl-10 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
                         
-                        <div class={`absolute -left-[9px] top-0 w-4 h-4 rounded-full ring-4 ring-white dark:ring-gray-800 shadow-sm group-hover:scale-125 transition-transform ${job.isCurrent ? 'bg-sf-blue dark:bg-sf-light' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
+                        <div class={`absolute -left-[9px] top-2 w-4 h-4 rounded-full ring-4 ring-white dark:ring-gray-900 shadow-sm group-hover:scale-125 transition-transform ${job.isCurrent ? 'bg-sf-blue dark:bg-sf-light' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
                         
-                        <h3 class="text-xl font-bold text-sf-dark dark:text-white group-hover:text-sf-blue dark:group-hover:text-sf-light transition-colors">
-                            {job.role}
-                        </h3>
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden p-1 group-hover:border-sf-blue/50 transition-colors">
+                                <img src={job.logo} alt={job.company} class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <h3 class="text-xl font-bold text-sf-dark dark:text-white group-hover:text-sf-blue dark:group-hover:text-sf-light transition-colors leading-tight">
+                                    {job.role}
+                                </h3>
+                                
+                                <p class="text-sf-blue dark:text-sf-light font-semibold text-sm mt-1">
+                                    {job.company} <span class="mx-1 text-gray-300 dark:text-gray-600">|</span> <span class="text-gray-500 dark:text-gray-400 font-medium">{job.period}</span>
+                                </p>
+                            </div>
+                        </div>
                         
-                        <p class="text-sf-blue dark:text-sf-light font-medium mb-2">
-                            {job.company} | <span class="text-gray-500 dark:text-gray-400">{job.period}</span>
-                        </p>
-                        
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                            {job.description}
-                        </p>
+                        <div class="mt-4">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                                {job.description}
+                            </p>
+                        </div>
                     </div>
                 ))}
 

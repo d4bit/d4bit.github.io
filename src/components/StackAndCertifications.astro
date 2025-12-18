@@ -1,90 +1,113 @@
 ---
 import ExperienceTimeline from './ExperienceTimeline.astro';
+const themeClasses = {
+    cloud: "bg-indigo-50 text-indigo-800 dark:text-indigo-300 dark:bg-indigo-900/30 border-indigo-100 dark:border-indigo-800",
+    sfDev: "bg-sky-50 text-sky-800 dark:text-sky-300 dark:bg-sky-900/30 border-sky-100 dark:border-sky-800",
+    logic: "bg-emerald-50 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-900/30 border-emerald-100 dark:border-emerald-800",
+    web: "bg-orange-50 text-orange-800 dark:text-orange-300 dark:bg-orange-900/30 border-orange-100 dark:border-orange-800"
+};
 
-// 1. Set de Tecnologías (Stack)
 const techStack = [
-    { name: "Sales Cloud", logo: "https://img.logo-storage.com/salesforce.png", theme: "red" },
-    { name: "LWC", logo: "https://img.logo-storage.com/lwc.png", theme: "blue" },
-    { name: "Mulesoft", logo: "https://img.logo-storage.com/mulesoft.png", theme: "green" },
-    { name: "Apex", logo: "https://img.logo-storage.com/apex.png", theme: "sf" },
-    { name: "OmniStudio", logo: "https://img.logo-storage.com/omni.png", theme: "blue" },
-    { name: "Experience Cloud", logo: "https://img.logo-storage.com/cloud.png", theme: "sf" }
-];
+    // --- GRUPO 1: SALESFORCE CLOUDS & AI (Indigo/Cloud) ---
+    { name: "Sales Cloud", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJM0K9gRRQ5NkZAt4krbMQz1PumLjEb3N8dg&s", theme: "cloud" },
+    { name: "Service Cloud", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-service-cloud.svg", theme: "cloud" },
+    { name: "Field Service", logo: "https://cdn.prod.website-files.com/62ab14c60bfc7da7685ed1fb/652d1e4c8404dd7d3f4b6a18_unnamed-removebg-preview.png", theme: "cloud" },
+    { name: "Experience Cloud", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqLrI3yh9TdQUIUCtFvjAP0dM1AIyQGug0yg&s", theme: "cloud" },
+    { name: "Data Cloud", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8AmVBtmz6ljV5jrgKTx5Gh-h5LduKiRXGug&s", theme: "cloud" },
+    { name: "Agentforce", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC_QFbTFMasUfnuKan4pWGlVr4700Fo7_9-w&s", theme: "cloud" },
 
-// 2. Set de Certificaciones
+    // --- GRUPO 2: SALESFORCE DEVELOPMENT (Sky/sfDev) ---
+    { name: "Apex", logo: "https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg", theme: "sfDev" },
+    { name: "LWC", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIzBuTefuhQLcRcXbp6ihCN2kQ4GAeHRSEEQ&s", theme: "sfDev" },
+    { name: "Flows", logo: "https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg", theme: "sfDev" },
+    { name: "SOQL", logo: "https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg", theme: "sfDev" },
+    { name: "Copado", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm-tpuvrVWvqmVznvmAx0PisAKZWqZUvi6lA&s", theme: "sfDev" },
+    { name: "Integraciones", logo: "https://www.vectorlogo.zone/logos/mulesoft/mulesoft-icon.svg", theme: "sfDev" },
+
+    // --- GRUPO 3: LENGUAJES & BACKEND (Emerald/Logic) ---
+    { name: "Javascript", logo: "https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg", theme: "logic" },
+    { name: "Node.js", logo: "https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg", theme: "logic" },
+    { name: "Python", logo: "https://www.vectorlogo.zone/logos/python/python-icon.svg", theme: "logic" },
+    { name: "NPM", logo: "https://www.vectorlogo.zone/logos/npmjs/npmjs-icon.svg", theme: "logic" },
+
+    // --- GRUPO 4: MODERN WEB & STYLING (Orange/Web) ---
+    { name: "Astro", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KhCojo9MAD9u7-vbHjYYFzD69By9d-PWcw&s", theme: "web" },
+    { name: "VueJS", logo: "https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg", theme: "web" },
+    { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg", theme: "web" },
+    { name: "CSS", logo: "https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg", theme: "web" }
+];
+// 2. Set de Certificaciones (URLs corregidas para clic)
 const certifications = [
     {
-        title: "Salesforce Certified Technical Architect (CTA)",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-cta.png"
+        title: "Application Architect",
+        url: "https://trailhead.salesforce.com/en/credentials/applicationarchitect",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Application-Architect.png"
+    },
+    {
+        title: "Sharing and Visibility Architect",
+        url: "https://trailhead.salesforce.com/en/credentials/sharingandvisibilityarchitect",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Sharing-and-Visibility-Designer.png"
+    },
+    {
+        title: "Data Architect",
+        url: "https://trailhead.salesforce.com/en/credentials/dataarchitect",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Data-Architecture-and-Management-Designer.png"
     },
     {
         title: "Platform Developer II",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-pd2.png"
+        url: "https://trailhead.salesforce.com/en/credentials/platformdeveloperii",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Platform-Developer-II.png"
     },
     {
-        title: "Application Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-aa.png"
+        title: "Agentforce Specialist",
+        url: "https://trailhead.salesforce.com/en/credentials/agentforcespecialist",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/2025-02_Badge_SF-Certified_Agentforce-Specialist_High-Res.png"
     },
     {
-        title: "System Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-sa.png"
-    },
-        {
-        title: "Salesforce Certified Technical Architect (CTA)",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-cta.png"
+        title: "Service Cloud Consultant",
+        url: "https://trailhead.salesforce.com/en/credentials/servicecloudconsultant",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Service-Cloud-Consultant.png"
     },
     {
-        title: "Platform Developer II",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-pd2.png"
+        title: "JavaScript Developer I",
+        url: "https://trailhead.salesforce.com/en/credentials/javascriptdeveloperi",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/JavaScript-Developer-I.png"
     },
     {
-        title: "Application Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-aa.png"
+        title: "Platform Developer I",
+        url: "https://trailhead.salesforce.com/en/credentials/platformdeveloperi",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Platform-Developer-I.png"
     },
     {
-        title: "System Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-sa.png"
-    },
-        {
-        title: "Salesforce Certified Technical Architect (CTA)",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-cta.png"
+        title: "Platform App Builder",
+        url: "https://trailhead.salesforce.com/en/credentials/platformappbuilder",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Platform-App-Builder.png"
     },
     {
-        title: "Platform Developer II",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-pd2.png"
+        title: "AI Associate",
+        url: "https://trailhead.salesforce.com/en/credentials/aiassociate",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/ai-associate.png?v=2"
     },
     {
-        title: "Application Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-aa.png"
+        title: "Salesforce Administrator",
+        url: "https://trailhead.salesforce.com/en/credentials/administrator",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Administrator.png"
     },
     {
-        title: "System Architect",
-        url: "https://trailhead.salesforce.com/...",
-        logo: "https://tu-url.com/logo-sa.png"
+        title: "Salesforce Associate",
+        url: "https://trailhead.salesforce.com/en/credentials/associate",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Associate.png"
+    },
+    {
+        title: "Process Automation Accredited Professional",
+        url: "https://trailhead.salesforce.com/en/credentials/processautomationaccreditedprofessional",
+        logo: "https://developer.salesforce.com/resources2/certification-site/images/2021-04_PLC-AP-Badge_Process_Automation_High-Res.png"
     }
 ];
-
-const themeClasses = {
-    red: "bg-red-50 text-red-800 dark:text-red-300 dark:bg-red-900/30",
-    blue: "bg-blue-50 text-blue-800 dark:text-blue-300 dark:bg-blue-900/30",
-    green: "bg-green-50 text-green-800 dark:text-green-300 dark:bg-green-900/30",
-    sf: "bg-sf-blue/5 text-sf-blue dark:text-sf-light dark:bg-sf-blue/10"
-};
 ---
 
-<section id="stack" class="w-full py-24 px-36 px-4 bg-white dark:bg-gray-700 transition-colors duration-500">
-    <div class="grid md:grid-cols-2 gap-20">
+<section id="stack" class="w-full py-24 px-4 bg-white dark:bg-gray-950 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
         
         <div>
             <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3">
@@ -101,7 +124,7 @@ const themeClasses = {
             
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-sf-dark dark:text-white flex items-center gap-3">
-                    <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Certificaciones
+                    <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Certificaciones (13)
                 </h2>
                 <button id="toggle-certs" class="group text-xs font-bold uppercase tracking-widest text-sf-blue dark:text-sf-light flex items-center gap-2 outline-none cursor-pointer">
                     <span id="btn-text">Ver todas</span>
@@ -112,26 +135,30 @@ const themeClasses = {
             </div>
 
             <div class="mb-16">
-                <div id="cert-scroll-container" class="bg-gray-50/50 dark:bg-gray-800/80 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 dark:border-gray-700 shadow-inner block">
-                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-transparent z-10 pointer-events-none"></div>
+                <div id="cert-scroll-container" class="bg-gray-50/50 dark:bg-gray-900/50 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 dark:border-gray-800 shadow-inner block">
+                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-50 dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
+                    
                     <div class="animate-vertical-scroll space-y-4 py-2">
                         {[...certifications, ...certifications].map((cert) => (
-                            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                            <a href={cert.url} target="_blank" rel="noopener noreferrer" 
+                               class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-sf-blue hover:scale-[1.02] transition-all duration-300 relative z-20">
                                 <div class="flex items-center gap-4">
                                     <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center">
                                         <img src={cert.logo} alt="" class="max-w-full max-h-full object-contain" />
                                     </div>
                                     <p class="font-bold text-sf-dark dark:text-white text-sm leading-tight">{cert.title}</p>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
-                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-800 to-transparent z-10 pointer-events-none"></div>
+
+                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
                 </div>
 
                 <div id="cert-full-list" class="hidden space-y-4 animate-fade-in-up">
                     {certifications.map((cert) => (
-                        <a href={cert.url} target="_blank" class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-sf-blue hover:ring-4 hover:ring-sf-blue/10 transition-all">
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer" 
+                           class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-sf-blue transition-all">
                             <div class="flex items-center gap-4">
                                 <img src={cert.logo} alt="" class="w-12 h-12 object-contain" />
                                 <p class="font-bold text-sf-dark dark:text-white text-sm">{cert.title}</p>
@@ -172,7 +199,7 @@ const themeClasses = {
 
 <style>
     .animate-vertical-scroll {
-        animation: scroll-vertical 20s linear infinite;
+        animation: scroll-vertical 30s linear infinite;
     }
     .animate-vertical-scroll:hover {
         animation-play-state: paused;
@@ -180,5 +207,13 @@ const themeClasses = {
     @keyframes scroll-vertical {
         0% { transform: translateY(0); }
         100% { transform: translateY(-50%); }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.4s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
