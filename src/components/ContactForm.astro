@@ -1,50 +1,88 @@
 ---
 // src/components/ContactForm.astro
+import logoImg from '../assets/logo.png';
 ---
-<section id="contact" class="py-20 px-4 transition-colors duration-500 bg-gray-100 dark:bg-gray-700">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-center mb-12 text-sf-dark dark:text-white">
-            ¿Hablamos?
-        </h2>
 
-        <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl dark:shadow-none transition-all duration-500 border border-gray-100 dark:border-gray-700">
-            
-            <form action="#" method="POST" class="space-y-6">
+<section id="contact" class="py-24 px-4 bg-gray-100 dark:bg-gray-700 transition-colors duration-500 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+        <div class="absolute inset-0" style="background-image: radial-gradient(var(--sf-blue) 1px, transparent 1px); background-size: 30px 30px;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        <div class="space-y-10">
+            <div class="space-y-6">
+                <h2 class="text-5xl md:text-6xl font-black text-sf-dark dark:text-white leading-[1.1]">
+                    ¿Tienes un desafío técnico? <br/>
+                    <span class="text-sf-blue">Construyamos la solución.</span>
+                </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <input type="text" id="name" name="name" placeholder="Nombre Completo" required 
-                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-sf-blue focus:border-sf-blue bg-gray-50 dark:bg-gray-900 text-sf-dark dark:text-white transition-all duration-300 shadow-sm outline-none"
-                    >
-                    <input type="email" id="email" name="email" placeholder="Tu Email" required 
-                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-sf-blue focus:border-sf-blue bg-gray-50 dark:bg-gray-900 text-sf-dark dark:text-white transition-all duration-300 shadow-sm outline-none"
-                    >
-                    <input type="tel" id="phone" name="phone" placeholder="Tu Teléfono (Opcional)" 
-                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-sf-blue focus:border-sf-blue bg-gray-50 dark:bg-gray-900 text-sf-dark dark:text-white transition-all duration-300 shadow-sm outline-none"
-                    >
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                    Especializado en auditorías de código, arquitectura de integraciones y despliegues críticos en el ecosistema <span class="text-sf-blue font-semibold">Salesforce</span>.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div class="p-6 bg-white dark:bg-gray-700/50 rounded-2xl  dark:border-sf-blue shadow-sm group hover:border-sf-blue dark:bg-gray-800 transition-colors">
+                    <div class="w-10 h-10 bg-blue-50 dark:bg-sf-blue/10 rounded-lg flex items-center justify-center text-sf-blue mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p class="text-sm font-bold text-gray-400 uppercase">Email Directo</p>
+                    <p class="text-sf-dark dark:text-white font-medium break-all">hola@tu-dominio.com</p>
                 </div>
 
-                <div>
-                    <input type="text" id="subject" name="subject" placeholder="Asunto" required 
-                           class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-sf-blue focus:border-sf-blue bg-gray-50 dark:bg-gray-900 text-sf-dark dark:text-white transition-all duration-300 shadow-sm outline-none"
-                    >
+                <div class="p-6 bg-white dark:bg-gray-700/50 rounded-2xl  dark:border-sf-blue shadow-sm group hover:border-sf-blue dark:bg-gray-800 transition-colors">
+                    <div class="w-10 h-10 bg-blue-50 dark:bg-sf-blue/10 rounded-lg flex items-center justify-center text-sf-blue mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <p class="text-sm font-bold text-gray-400 uppercase">Tiempo de respuesta</p>
+                    <p class="text-sf-dark dark:text-white font-medium">&lt; 24 horas laborables</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="absolute -top-4 right-8 z-20 bg-sf-blue text-white text-[10px] font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-widest border-2 border-white dark:border-gray-800">
+                New Case Request
+            </div>
+
+            <div class=" bg-white dark:bg-gray-800 p-8 md:p-10 rounded-[2.5rem] shadow-2xl shadow-sf-blue/10 dark:shadow-none border border-gray-100 dark:border-gray-700 relative overflow-hidden">
                 
-                <div>
-                    <textarea id="message" name="message" rows="5" placeholder="Mensaje..." required 
-                              class="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-sf-blue focus:border-sf-blue bg-gray-50 dark:bg-gray-900 text-sf-dark dark:text-white transition-all duration-300 resize-y shadow-sm outline-none"
-                    ></textarea>
-                </div>
+                <form action="#" method="POST" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-400 ml-1 uppercase">Nombre</label>
+                            <input type="text" name="name" placeholder="Ej: Marc Benioff" required 
+class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl text-sf-dark dark:text-white outline-none focus-ring-sf">                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-400 ml-1 uppercase">Email</label>
+                            <input type="email" name="email" placeholder="marc@salesforce.com" required 
+class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl text-sf-dark dark:text-white outline-none focus-ring-sf">                        </div>
+                    </div>
 
-                <div class="flex justify-center pt-4">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 ml-1 uppercase">Área de Interés</label>
+                        <select class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl text-sf-dark dark:text-white outline-none focus-ring-sf">
+                            <option>Arquitectura Salesforce</option>
+                            <option>Desarrollo LWC / Apex</option>
+                            <option>Integraciones (MuleSoft/API)</option>
+                            <option>DevOps & CI/CD</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 ml-1 uppercase">Tu Mensaje</label>
+                        <textarea name="message" rows="4" placeholder="Cuéntame sobre tu proyecto..." required 
+class="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl text-sf-dark dark:text-white outline-none focus-ring-sf"
+></textarea>
                     <button type="submit" 
-                            class="w-full md:w-auto px-12 py-3 text-lg font-bold text-white rounded-full 
-                                   bg-sf-blue hover:bg-sf-dark
-                                   transition-all transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-sf-blue/30"
-                    >
-                        Enviar Mensaje
+                            class="group w-full py-4 bg-sf-blue hover:bg-sf-dark text-white font-bold rounded-2xl shadow-xl shadow-sf-blue/20 transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
+                        <span>Enviar Solicitud</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </section>

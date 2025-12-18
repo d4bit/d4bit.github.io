@@ -1,60 +1,98 @@
 ---
-// src/components/StackAndCertifications.astro
 import ExperienceTimeline from './ExperienceTimeline.astro';
+
+// 1. Set de Tecnologías (Stack)
+const techStack = [
+    { name: "Sales Cloud", logo: "https://img.logo-storage.com/salesforce.png", theme: "red" },
+    { name: "LWC", logo: "https://img.logo-storage.com/lwc.png", theme: "blue" },
+    { name: "Mulesoft", logo: "https://img.logo-storage.com/mulesoft.png", theme: "green" },
+    { name: "Apex", logo: "https://img.logo-storage.com/apex.png", theme: "sf" },
+    { name: "OmniStudio", logo: "https://img.logo-storage.com/omni.png", theme: "blue" },
+    { name: "Experience Cloud", logo: "https://img.logo-storage.com/cloud.png", theme: "sf" }
+];
+
+// 2. Set de Certificaciones
+const certifications = [
+    {
+        title: "Salesforce Certified Technical Architect (CTA)",
+        url: "https://trailhead.salesforce.com/...",
+        logo: "https://tu-url.com/logo-cta.png"
+    },
+    {
+        title: "Platform Developer II",
+        url: "https://trailhead.salesforce.com/...",
+        logo: "https://tu-url.com/logo-pd2.png"
+    },
+    {
+        title: "Application Architect",
+        url: "https://trailhead.salesforce.com/...",
+        logo: "https://tu-url.com/logo-aa.png"
+    },
+    {
+        title: "System Architect",
+        url: "https://trailhead.salesforce.com/...",
+        logo: "https://tu-url.com/logo-sa.png"
+    }
+];
+
+// Mapeo de estilos para el Stack
+const themeClasses = {
+    red: "bg-red-50 text-red-800 dark:text-red-300 dark:bg-red-900/30",
+    blue: "bg-blue-50 text-blue-800 dark:text-blue-300 dark:bg-blue-900/30",
+    green: "bg-green-50 text-green-800 dark:text-green-300 dark:bg-green-900/30",
+    sf: "bg-sf-blue/5 text-sf-blue dark:text-sf-light dark:bg-sf-blue/10"
+};
 ---
+
 <section id="stack" class="py-24 max-w-7xl mx-auto px-4 bg-white dark:bg-gray-700 transition-colors duration-500">
     <div class="grid md:grid-cols-2 gap-20">
         
         <div>
-            <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3 transition-colors">
+            <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3">
                 <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Tech Stack
             </h2>
             <div class="flex flex-wrap gap-3 mb-20">
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-red-50 text-red-800 dark:text-red-300 dark:bg-red-900/30 rounded-full font-medium text-sm transition-all shadow-sm hover:border-sf-blue border border-transparent cursor-default">
-                    <img src="https://img.logo-storage.com/salesforce.png" alt="Sales Cloud logo" class="w-4 h-4 object-contain flex-shrink-0">
-                    Sales Cloud
-                </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-blue-50 text-sf-blue dark:text-sf-light dark:bg-sf-blue/10 rounded-full font-medium text-sm transition-all shadow-sm hover:border-sf-blue border border-transparent cursor-default">
-                    <img src="https://img.logo-storage.com/lwc.png" alt="LWC logo" class="w-4 h-4 object-contain flex-shrink-0">
-                    LWC
-                </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-green-50 text-green-800 dark:text-green-300 dark:bg-green-900/30 rounded-full font-medium text-sm transition-all shadow-sm hover:border-sf-blue border border-transparent cursor-default">
-                    <img src="https://img.logo-storage.com/mulesoft.png" alt="Mulesoft logo" class="w-4 h-4 object-contain flex-shrink-0">
-                    Mulesoft
-                </span>
-                <span class="inline-flex items-center gap-3 px-5 py-2 bg-sf-blue/5 text-sf-blue dark:text-sf-light dark:bg-sf-blue/10 rounded-full font-medium text-sm transition-all shadow-sm hover:border-sf-blue border border-transparent cursor-default">
-                    <img src="https://img.logo-storage.com/apex.png" alt="Apex logo" class="w-4 h-4 object-contain flex-shrink-0">
-                    Apex
-                </span>
+                {techStack.map((tech) => (
+                    <span class={`inline-flex items-center gap-3 px-5 py-2 rounded-full font-medium text-sm transition-all shadow-sm border border-transparent hover:border-sf-blue cursor-default ${themeClasses[tech.theme] || themeClasses.sf}`}>
+                        <img src={tech.logo} alt={tech.name} class="w-4 h-4 object-contain flex-shrink-0" />
+                        {tech.name}
+                    </span>
+                ))}
             </div>
             
-            <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3 transition-colors">
+            <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3">
                 <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Certificaciones
             </h2>
             <div class="mb-16">
-                <div class="bg-gray-50/50 dark:bg-gray-800/80 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 dark:border-gray-700 shadow-inner transition-colors">
+                <div class="bg-gray-50/50 dark:bg-gray-800/80 p-6 rounded-2xl h-[400px] overflow-hidden relative border border-gray-100 dark:border-gray-700 shadow-inner">
                     
-                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-3/50 dark:from-gray-800/80 to-transparent z-10 pointer-events-none transition-colors"></div>
+                    <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-gray-50 dark:from-gray-800 to-transparent z-10 pointer-events-none"></div>
                     
                     <div class="animate-vertical-scroll space-y-4 py-2">
-                        <a href="https://trailhead.salesforce.com/credentials/architectoverview" target="_blank" rel="noopener noreferrer" 
-                           class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-4 hover:shadow-md hover:border-sf-blue dark:hover:border-sf-light hover:translate-x-2 transition-all duration-300 group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center border border-gray-100 dark:border-gray-600 group-hover:bg-blue-50 dark:group-hover:bg-sf-blue/10 transition-colors">
-                                    <img src="https://tu-url.com/logo-cta.png" alt="CTA" class="max-w-full max-h-full object-contain">
+                        {[...certifications, ...certifications].map((cert) => (
+                            <a href={cert.url} target="_blank" rel="noopener noreferrer" 
+                               class="block bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-sf-blue dark:hover:border-sf-light hover:translate-x-2 transition-all duration-300 group">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 flex-shrink-0 bg-gray-50 dark:bg-gray-700 rounded-lg p-1 flex items-center justify-center border border-gray-100 dark:border-gray-600 group-hover:bg-blue-50 dark:group-hover:bg-sf-blue/10 transition-colors">
+                                        <img src={cert.logo} alt={cert.title} class="max-w-full max-h-full object-contain" />
+                                    </div>
+                                    <div class="flex-grow">
+                                        <p class="font-bold text-sf-dark dark:text-white text-sm leading-tight dark:group-hover:text-sf-light transition-colors">
+                                            {cert.title}
+                                        </p>
+                                        <span class="text-[10px] text-sf-blue dark:text-sf-light font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
+                                            Ver Credencial 
+                                            <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="flex-grow">
-                                    <p class="font-bold text-sf-dark dark:text-white text-sm leading-tight dark:group-hover:text-sf-light transition-colors">Salesforce Certified Technical Architect (CTA)</p>
-                                    <span class="text-[10px] text-sf-blue dark:text-sf-light font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
-                                        Ver Credencial 
-                                        <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
+                            </a>
+                        ))}
+                    </div>
                     
-                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50/50 dark:from-gray-800/50 to-transparent z-10 pointer-events-none transition-colors"></div>
+                    <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 dark:from-gray-800 to-transparent z-10 pointer-events-none"></div>
                 </div>
             </div>
         </div>
@@ -62,3 +100,19 @@ import ExperienceTimeline from './ExperienceTimeline.astro';
         <ExperienceTimeline />
     </div>
 </section>
+
+<style>
+    /* Definición de la animación de scroll vertical */
+    .animate-vertical-scroll {
+        animation: scroll-vertical 20s linear infinite;
+    }
+
+    .animate-vertical-scroll:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-vertical {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+</style>
