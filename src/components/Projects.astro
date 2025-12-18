@@ -42,7 +42,7 @@ const projects = [
                     Una selección de mis contribuciones técnicas y soluciones de arquitectura.
                 </p>
             </div>
-            <a href="https://github.com/tu-usuario" target="_blank" class="text-sf-blue dark:text-sf-light font-bold flex items-center gap-2 hover:underline">
+            <a href="https://github.com/d4bit" target="_blank" class="text-sf-blue dark:text-sf-light font-bold flex items-center gap-2 hover:underline">
                 Ver GitHub 
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
@@ -50,7 +50,9 @@ const projects = [
 
         <div class="grid md:grid-cols-3 gap-8">
             {projects.map((project) => (
-                <div class="group  bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-700 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-sf-blue/10 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                <div class="group relative bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-700 rounded-[2.5rem] overflow-hidden shadow-sm transition-all duration-500 flex flex-col 
+                            hover:-translate-y-2 hover:border-sf-blue dark:hover:border-sf-blue 
+                            cursor-pointer">
                     
                     <div class="relative h-48 overflow-hidden">
                         <img 
@@ -70,19 +72,22 @@ const projects = [
                             </p>
                         </div>
 
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-6">
+                        <div class="relative z-20"> <div class="flex flex-wrap gap-2 mb-6">
                                 {project.tech.map((t) => (
-                                    <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-300 rounded-md">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-300 rounded-md group-hover:bg-sf-blue/10 group-hover:text-sf-blue transition-colors">
                                         {t}
                                     </span>
                                 ))}
                             </div>
                             
-                            <a href={project.link} target="_blank" class="inline-flex items-center gap-2 text-sf-blue dark:text-sf-light font-bold text-sm group/link">
-                                Ver Repositorio
-                                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
+                            <div class="inline-flex items-center gap-2 text-sf-blue dark:text-sf-light font-bold text-sm group/link">
+                                <a href={project.link} target="_blank" class="after:absolute after:inset-0">
+                                    Ver Repositorio
+                                </a>
+                                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
