@@ -9,6 +9,7 @@ import ContactForm from '../components/ContactForm.astro';
 
 import logoImg from '../assets/logo.png';
 import Projects from '../components/Projects.astro';
+import BackToTop from '../components/BackToTop.astro';
 
 ---
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ import Projects from '../components/Projects.astro';
 </head>
     <Header />
 	<main class="bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 transition-colors" id="main-content">
+        <BackToTop />
         <HeroSection />
         <ClientMarquee />
         <StackAndCertifications />
