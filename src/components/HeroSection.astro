@@ -1,14 +1,15 @@
 ---
 // src/components/HeroSection.astro
+import { Image } from 'astro:assets';
 import avionetaImg from '../assets/airplane.png';
 ---
-<section id="inicio" class="pt-20 lg:pt-0 min-h-screen flex items-center pb-12 relative overflow-hidden transition-colors duration-500 bg-[#0a0a0a]">
+<section id="inicio" class="pt-20 lg:pt-0 min-h-screen flex items-center pb-12 relative overflow-hidden transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
     
     <div class="absolute inset-0 z-0 pointer-events-none">
         <img 
             src="https://abhimanyud3dx.github.io/superqbit-static-resources/resources/images/bg/bg1.png" 
             alt="Background Grid" 
-            class="w-full h-full object-cover dark:opacity-45 "
+            class="w-full h-full object-cover dark:opacity-45 opacity-20"
         />
     </div>
 
@@ -16,40 +17,36 @@ import avionetaImg from '../assets/airplane.png';
             <div class="avioneta-container absolute top-1/3 left-[-100px]">
                 <div class="flex flex-col items-center">
                     <div class="w-16 h-16 -rotate-12 opacity-50">
-                        <img 
-                            src={avionetaImg.src} 
-                            alt="avioneta" 
-                            class="w-full h-full object-contain"
-                        />
+                        <img src={avionetaImg.src} alt="avioneta" class="w-full h-full object-contain" />
                     </div>
-                    <div class="w-24 h-[1px] bg-gradient-to-l from-blue-400/20 to-transparent mt-1 mr-12"></div>
+                    <div class="w-24 h-[1px] bg-gradient-to-l from-sf-blue/20 to-transparent mt-1 mr-12"></div>
                 </div>
             </div>
         </div>
 
     <div class="max-w-7xl mx-auto px-4 w-full grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8 animate-fade-in-up z-10 order-2 lg:order-1">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 font-bold tracking-wider uppercase transition-colors">
-                <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
-                Open to Work
-            </div>
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-sf-blue dark:bg-sf-dark/10 dark:text-sf-blue font-bold tracking-wider uppercase transition-colors">
+        <span class="w-2 h-2 rounded-full bg-sf-blue animate-pulse"></span>
+        Open to Work
+    </div>
             
-            <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] transition-colors">
+            <h1 class="text-5xl lg:text-7xl font-bold text-sf-dark dark:text-white leading-[1.1] transition-colors">
                 Architecting Scalable <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                <span class="text-sf-blue bg-clip-text bg-gradient-to-r from-sf-blue to-sf-light">
                     Cloud Solutions
                 </span>
             </h1>
             
-            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed border-l-4 border-blue-200 dark:border-blue-700 pl-4 transition-colors">
+            <p class="text-lg text-gray-600 dark:text-sf-dark/10 max-w-lg leading-relaxed border-l-4 border-sf-dark dark:border-sf-dark dark:text-white pl-4 transition-colors">
                 Transformando negocios a través de la arquitectura Salesforce de alto rendimiento.
             </p>
 
             <div class="flex flex-wrap gap-4 pt-2">
-                <a href="#contact" class="px-8 py-3.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                <a href="#contact" class="px-8 py-3.5 bg-sf-blue text-white rounded-xl font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-sf-blue/30 transition-all transform hover:-translate-y-1">
                     Contactar
                 </a>
-                <a href="#stack" class="px-8 py-3.5 bg-white dark:bg-gray-700 text-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-blue-300 transition-all">
+                <a href="#stack" class="px-8 py-3.5 bg-white dark:bg-sf-dark text-sf-light dark:text-white border border-gray-200 dark:border-gray-600 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-600 dark:text-white hover:border-sf-blue transition-all">
                     Ver Stack
                 </a>
             </div>
@@ -62,32 +59,32 @@ import avionetaImg from '../assets/airplane.png';
                     alt="Profile" 
                     class="w-full h-full object-cover rounded-[2rem] shadow-2xl z-10 relative transition-opacity duration-700">
                 
-                <div class="absolute -top-6 -left-8 z-20 bg-white/90 dark:bg-gray-700/90 backdrop-blur-md p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-none border border-white/50 dark:border-gray-600/50 animate-float-slow max-w-[160px] transition-colors duration-500">
+                <div class="absolute -top-6 -left-8 z-20 bg-white/90 dark:bg-sf-dark  backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50 dark:border-gray-700 animate-float-slow max-w-[160px]">
                     <div class="flex items-center gap-3">
-                        <div class="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg text-blue-600">
+                        <div class="p-2 bg-blue-50 dark:bg-sf-blue/20 rounded-lg text-sf-blue dark:text-sf-light">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <div class="text-gray-900 dark:text-white">
-                            <p class="text-2xl font-bold leading-none">+4</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase mt-1">Años de Experiencia</p>
+                        <div>
+                            <p class="text-2xl font-bold leading-none text-sf-dark dark:text-sf-light">+4</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase mt-1">Años Exp.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="absolute -bottom-8 -right-4 z-30 bg-gray-900 dark:bg-gray-700 text-white p-5 rounded-2xl shadow-2xl animate-float-medium max-w-[180px]">
-                    <p class="text-3xl font-bold text-blue-400 mb-1">13</p>
-                    <p class="text-sm text-gray-300 leading-tight">Certificaciones Oficiales Salesforce</p>
+                <div class="absolute -bottom-8 -right-4 z-30 bg-sf-dark  text-white p-5 rounded-2xl shadow-2xl animate-float-medium max-w-[180px]">
+                    <p class="text-3xl font-bold text-sf-blue mb-1">13</p>
+                    <p class="text-sm text-blue-100 leading-tight">Certificaciones Oficiales Salesforce</p>
                 </div>
 
-                <div class="absolute top-12 -right-10 z-20 bg-white dark:bg-gray-700 p-4 rounded-xl shadow-xl animate-float-fast animate-float-medium max-w-[180px] border border-gray-100 dark:border-gray-600 hidden md:block transform rotate-3 transition-colors duration-500">
+                <div class="absolute top-12 -right-10 z-20 bg-white dark:bg-sf-dark p-4 rounded-xl shadow-xl animate-float-medium hidden md:block border border-gray-100 dark:border-gray-700 transform rotate-3">
                     <div class="text-center">
-                        <p class="text-2xl font-bold text-indigo-600">+30</p>
+                        <p class="text-2xl font-bold text-sf-blue dark:text-sf-light">+30</p>
                         <p class="text-[10px] text-gray-400 dark:text-gray-300 uppercase font-bold tracking-wider">Proyectos</p>
                     </div>
                 </div>
 
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full blur-2xl -z-10"></div>
-                <div class="absolute top-10 -right-10 w-40 h-40 bg-indigo-600/10 rounded-full blur-2xl -z-10"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-sf-blue/10 rounded-full blur-2xl -z-10"></div>
+                <div class="absolute top-10 -right-10 w-40 h-40 bg-sf-light/10 rounded-full blur-2xl -z-10"></div>
             </div>
         </div>
     </div>

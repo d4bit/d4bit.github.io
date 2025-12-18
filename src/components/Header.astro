@@ -2,31 +2,35 @@
 // src/components/Header.astro
 import SocialIcons from './SocialIcons.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import logoImg from '../assets/logo.png';
 ---
 
 <div id="app-header">
-    <nav class="w-full top-0 z-50 backdrop-blur-md bg-white dark:bg-gray-900 transition-colors duration-500 dark:border-gray-800"> 
+    <nav class="w-full top-0 z-50 backdrop-blur-md bg-white dark:bg-gray-900 transition-colors duration-500"> 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
-                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform">
-                     <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">DF</div>
-                     <span class="font-bold text-xl text-gray-800 dark:text-white tracking-tight">Dabit<span class="text-blue-600 dark:text-blue-400">Force</span></span>
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
+                     <div class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">
+                            <img src={logoImg.src} alt="ImpulsaForce Logo" class="object-contain" />
+                     </div>
+                     <span class="font-bold text-xl text-sf-dark dark:text-white tracking-tight">
+                        Impulsa<span class="text-sf-blue dark:text-sf-light">Force</span>
+                     </span>
                 </div>
                 
                 <div class="hidden md:flex flex-grow justify-center">
                     <div class="flex space-x-10">
-                        <a href="#inicio" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300">Inicio</a>
-                        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300">Contactar</a>
+                        <a href="#inicio" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Inicio</a>
+                        <a href="#contact" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Contactar</a>
                     </div>
                 </div>
                 
                 <div class="flex items-center space-x-2"> 
-                    
                     <SocialIcons />
                     <ThemeToggle />
                     
-                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
+                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-sf-dark rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
@@ -38,10 +42,10 @@ import ThemeToggle from './ThemeToggle.astro';
         
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl">
             <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Inicio
                 </a>
-                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Contactar
                 </a>
             </div>

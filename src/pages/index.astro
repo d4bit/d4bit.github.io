@@ -6,13 +6,17 @@ import HeroSection from '../components/HeroSection.astro';
 import ClientMarquee from '../components/ClientMarquee.astro';
 import StackAndCertifications from '../components/StackAndCertifications.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+import logoImg from '../assets/logo.png';
+
 ---
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth dark">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Román - Salesforce Technical Architect</title>
+    <link rel="icon" type="image/png" href={logoImg.src} />
+    <title>Impulsaforce | David Román - Salesforce Technical Architect</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
     <Header />

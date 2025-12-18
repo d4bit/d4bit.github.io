@@ -1,8 +1,94 @@
 @import "tailwindcss";
+
+/* Definición del modo oscuro para Tailwind v4 o v3.4+ */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 1. Variables de Marca Salesforce */
+:root {
+  --sf-blue: #0d9dda;   /* Azul oficial Salesforce */
+  --sf-light: #0d9dda;  /* Azul brillante (Modo Oscuro/Hovers) */
+  --sf-dark: #032d60;   /* Azul profundo (Botones/Footer) */
+  --sf-blue-rgb: 1, 118, 211; /* Para opacidades */
+  --sf-dark-rgb: 1, 68, 134; /* RGB de #014486 */
+}
 
-body { font-family: 'Inter', sans-serif; } 
-.animate-fade-in-up { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.animate-fade-in-delayed { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s; }
-.marquee-container { overflow: hidden; } 
+/* 2. Estilos Globales */
+body { 
+  font-family: 'Inter', sans-serif; 
+} 
+
+/* 3. Utilidades Personalizadas de Salesforce */
+@layer utilities {
+  /* Colores de Texto */
+  .text-sf-blue { color: var(--sf-blue); }
+  .text-sf-light { color: var(--sf-light); }
+  .text-sf-dark { color: var(--sf-dark); }
+  
+  .hover\:text-sf-blue:hover { color: var(--sf-blue); }
+  .hover\:text-sf-light:hover { color: var(--sf-light); }
+
+  /* Colores de Fondo */
+  .bg-sf-blue { background-color: var(--sf-blue); }
+  .bg-sf-light { background-color: var(--sf-light); }
+  .bg-sf-dark { background-color: var(--sf-dark); }
+  .hover\:bg-sf-dark:hover { background-color: var(--sf-dark); }
+
+  /* Colores de Borde */
+  .border-sf-blue { border-color: var(--sf-blue); }
+  .border-sf-light { border-color: var(--sf-light); }
+  .border-sf-dark { border-color: var(--sf-dark); }
+  .border-sf-dark\/20 { border-color: rgba(var(--sf-dark-rgb), 0.2); }
+  .hover\:border-sf-blue:hover { border-color: var(--sf-blue); }
+
+  /* Utilidades de Opacidad (Usando RGB para que funcione el canal alfa) */
+  .border-sf-blue\/20 { border-color: rgba(var(--sf-blue-rgb), 0.2); }
+  .border-sf-blue\/30 { border-color: rgba(var(--sf-blue-rgb), 0.3); }
+  .bg-sf-blue\/10 { background-color: rgba(var(--sf-blue-rgb), 0.1); }
+  .bg-sf-blue\/20 { background-color: rgba(var(--sf-blue-rgb), 0.2); }
+
+  /* Interactividad (Focus y Groups) */
+  .focus\:ring-sf-blue:focus {
+    --tw-ring-color: var(--sf-blue);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px var(--sf-blue);
+  }
+  
+  .group:hover .group-hover\:text-sf-blue { color: var(--sf-blue); }
+}
+
+/* 4. Soporte Modo Oscuro (Override Manual) */
+.dark {
+  .dark\:text-sf-light { color: var(--sf-light) !important; }
+  .dark\:border-sf-blue { border-color: var(--sf-blue) !important; }
+  .dark\:border-sf-blue\/30 { border-color: rgba(var(--sf-blue-rgb), 0.3) !important; }
+  .dark\:bg-sf-blue\/10 { background-color: rgba(var(--sf-blue-rgb), 0.1) !important; }
+  .dark\:bg-sf-dark { background-color: var(--sf-dark) !important; }
+  .dark .group:hover .group-hover\:text-sf-light { color: var(--sf-light) !important; }
+  .dark\:hover\:text-sf-light:hover { color: var(--sf-light) !important; }
+  .dark\:text-white { color: #FFFFFF !important; }
+}
+
+/* Clase específica para el fondo con opacidad del azul oscuro */
+  .dark\:bg-sf-dark\/10 { 
+    background-color: rgba(1, 68, 134, 0.1); 
+  }
+
+/* Forzar el color en modo oscuro */
+.dark .dark\:text-sf-dark { 
+  color: var(--sf-dark) !important; 
+}
+
+/* 5. Animaciones */
+.animate-fade-in-up { 
+  animation: fadeInUp 0.8s ease-out forwards; 
+}
+.animate-fade-in-delayed { 
+  animation: fadeInUp 0.8s ease-out 0.4s forwards; 
+  opacity: 0; 
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
