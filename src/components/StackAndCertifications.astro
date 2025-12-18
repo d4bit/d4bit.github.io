@@ -7,7 +7,6 @@ const themeClasses = {
     logic: "bg-emerald-50/80 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-900/40 border-emerald-100 dark:border-emerald-800",
     web: "bg-orange-50/80 text-orange-800 dark:text-orange-300 dark:bg-orange-900/40 border-orange-100 dark:border-orange-800"
 };
-
 const techStack = [
     { name: "Sales Cloud", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJM0K9gRRQ5NkZAt4krbMQz1PumLjEb3N8dg&s", theme: "cloud" },
     { name: "Service Cloud", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-service-cloud.svg", theme: "cloud" },
@@ -30,6 +29,17 @@ const techStack = [
     { name: "Tailwind CSS", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg", theme: "web" },
     { name: "CSS", logo: "https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg", theme: "web" }
 ];
+const categories = [
+    { id: "cloud", label: "Salesforce Core & Clouds" },
+    { id: "sfDev", label: "Development & DevOps" },
+    { id: "logic", label: "Backend & Logic" },
+    { id: "web", label: "Frontend & Web" }
+];
+
+const groupedStack = categories.map(cat => ({
+    ...cat,
+    items: techStack.filter(tech => tech.theme === cat.id)
+}));
 
 const certifications = [
     { title: "Application Architect", url: "https://trailhead.salesforce.com/en/credentials/applicationarchitect", logo: "https://developer.salesforce.com/resources2/certification-site/images/Certifications-logo/Application-Architect.png" },
@@ -68,12 +78,21 @@ const certifications = [
             <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3">
                 <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Tech Stack
             </h2>
-            <div class="flex flex-wrap gap-3 mb-20">
-                {techStack.map((tech) => (
-                    <span class={`inline-flex items-center gap-2.5 px-4 py-2 rounded-xl font-medium text-xs transition-all shadow-sm border hover:border-sf-blue hover:-translate-y-1 cursor-default backdrop-blur-md ${themeClasses[tech.theme]}`}>
-                        <img src={tech.logo} alt={tech.name} class="w-4 h-4 object-contain flex-shrink-0" />
-                        {tech.name}
-                    </span>
+            <div class="space-y-10 mb-20">
+                {groupedStack.map((group) => (
+                    <div class="group/category">
+                        <h3 class="text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-white font-bold mb-4 flex items-center gap-2">
+                            {group.label}
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            {group.items.map((tech) => (
+                                <span class={`inline-flex items-center gap-2.5 px-4 py-2 rounded-xl font-medium text-xs transition-all shadow-sm border hover:border-sf-blue hover:-translate-y-1 cursor-default backdrop-blur-md ${themeClasses[tech.theme]}`}>
+                                    <img src={tech.logo} alt={tech.name} class="w-4 h-4 object-contain flex-shrink-0" />
+                                    {tech.name}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
             
