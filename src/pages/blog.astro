@@ -1,0 +1,106 @@
+---
+import '../styles/global.css'; 
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ClientMarquee from '../components/ClientMarquee.astro';
+import StackAndCertifications from '../components/StackAndCertifications.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+import logoImg from '../assets/logo.png';
+import Projects from '../components/Projects.astro';
+import BackToTop from '../components/BackToTop.astro';
+
+---
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href={logoImg.src} />
+    <title>Impulsaforce | David Román - Salesforce Technical Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+    <Header />
+<main class="bg-white dark:bg-[#0a0a0a] text-gray-800 dark:text-gray-100 transition-colors" id="main-content">
+    <BackToTop />
+    
+    <section class="min-h-[80vh] dark:bg-gray-700 flex items-center justify-center relative overflow-hidden px-4">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-sf-blue/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-[120px] -z-10"></div>
+
+        <div class="max-w-2xl w-full text-center space-y-8 animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sf-blue/10 border border-sf-blue/20 text-sf-blue text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sf-blue opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sf-blue"></span>
+                </span>
+                En construcción
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-sf-dark dark:text-white leading-tight">
+                Algo grande está <br/>
+                <span class="text-transparent bg-clip-text text-sf-blue ">
+                    en camino
+                </span>
+            </h1>
+
+            <p class="text-lg text-gray-500 dark:text-gray-400 max-w-md mx-auto leading-relaxed">
+                Estoy trabajando en el blog <span class="font-bold text-sf-dark dark:text-white">Impulsaforce</span> para ofrecerte el mejor contenido hispano de Salesforce. 
+            </p>
+        </div>
+    </section>
+</main>
+	<Footer />
+
+<script>
+// Cargar tema inmediatamente al inicio
+(function() {
+    const html = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+    
+    // Aplicar tema inicial
+    html.classList.toggle('dark', initialTheme === 'dark');
+    
+    // Cuando el DOM esté listo, configurar el botón
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('theme-toggle');
+        
+        if (toggleButton) {
+            toggleButton.addEventListener('click', function() {
+                const isDark = html.classList.contains('dark');
+                const newTheme = isDark ? 'light' : 'dark';
+                
+                // Cambiar clase
+                html.classList.toggle('dark', !isDark);
+                
+                // Guardar preferencia
+                localStorage.setItem('theme', newTheme);
+                
+                // Actualizar iconos (si existen en el DOM)
+                const lightIcon = document.querySelector('.light-icon');
+                const darkIcon = document.querySelector('.dark-icon');
+                
+                if (lightIcon && darkIcon) {
+                    lightIcon.classList.toggle('hidden', newTheme === 'dark');
+                    darkIcon.classList.toggle('hidden', newTheme === 'light');
+                }
+            });
+            
+            // Inicializar iconos
+            const lightIcon = document.querySelector('.light-icon');
+            const darkIcon = document.querySelector('.dark-icon');
+            const isDark = html.classList.contains('dark');
+            
+            if (lightIcon && darkIcon) {
+                lightIcon.classList.toggle('hidden', isDark);
+                darkIcon.classList.toggle('hidden', !isDark);
+            }
+        }
+    });
+})();
+</script>
+</body>
+</html>
