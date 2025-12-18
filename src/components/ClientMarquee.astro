@@ -1,22 +1,48 @@
 ---
-// src/components/ClientMarquee.astro (Añadido 'dark:' en fondo y texto)
+// src/components/ClientMarquee.astro
+const clients = [
+    { name: 'Global Corp', logo: 'https://img.logo-storage.com/global.png' },
+    { name: 'Tech Solutions', logo: 'https://img.logo-storage.com/tech.png' },
+    { name: 'Finance Flow', logo: 'https://img.logo-storage.com/finance.png' },
+    { name: 'Cloud Systems', logo: 'https://img.logo-storage.com/cloud.png' },
+    { name: 'Retail Giant', logo: 'https://img.logo-storage.com/retail.png' },
+];
+
+// Duplicamos la lista para crear el efecto de bucle infinito sin saltos
+const marqueeItems = [...clients, ...clients];
 ---
-<section class="py-12 bg-gray-100 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-700 overflow-hidden transition-colors duration-500">
-    <div class="flex animate-marquee whitespace-nowrap items-center">
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Global Corp</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Tech Solutions</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Finance Flow</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Cloud Systems</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Retail Giant</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Global Corp</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Tech Solutions</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Finance Flow</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Cloud Systems</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Retail Giant</div>
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Global Corp</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Tech Solutions</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Finance Flow</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Cloud Systems</div> 
-        <div class="flex-shrink-0 mx-8 text-xl font-bold text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default select-none">Retail Giant</div>
+
+<section class="py-12 bg-gray-50 dark:bg-gray-800 border-y border-gray-100 dark:border-gray-800 overflow-hidden transition-colors duration-500">
+    <div class="relative flex">
+        <div class="flex animate-marquee whitespace-nowrap items-center">
+            {marqueeItems.map((client) => (
+                <div class="flex-shrink-0 mx-12 group">
+                    <img 
+                        src={client.logo} 
+                        alt={client.name} 
+                        title={client.name}
+                        class="h-10 w-auto object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 dark:brightness-0 dark:invert dark:opacity-40 dark:group-hover:opacity-100 transition-all duration-500 cursor-pointer"
+                    />
+                </div>
+            ))}
+        </div>
     </div>
 </section>
+
+<style>
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+    }
+
+    /* Pausar al pasar el ratón para mejorar la UX */
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+</style>

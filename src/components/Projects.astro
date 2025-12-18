@@ -1,0 +1,98 @@
+---
+// src/components/Projects.astro
+const projects = [
+    {
+        title: "Salesforce LWC E-Commerce",
+        description: "Plataforma de comercio electrónico construida íntegramente con Lightning Web Components y headless commerce.",
+        tech: ["LWC", "Apex", "SOQL"],
+        link: "https://github.com/tu-usuario/proyecto-1",
+        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+        title: "MuleSoft Integration Engine",
+        description: "Middleware para sincronización de datos en tiempo real entre SAP y Salesforce Service Cloud.",
+        tech: ["MuleSoft", "DataWeave", "AnyPoint"],
+        link: "https://github.com/tu-usuario/proyecto-2",
+        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+        title: "Force.com DevOps Tool",
+        description: "CLI personalizada para automatizar despliegues de metadatos y validaciones de código en orgs de Salesforce.",
+        tech: ["Node.js", "SFDX", "GitHub Actions"],
+        link: "https://github.com/tu-usuario/proyecto-3",
+        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+    }
+];
+---
+<div class="w-full overflow-hidden leading-[0] bg-white dark:bg-gray-700">
+    <svg class="relative block w-[calc(100%+1.3px)] h-[50px] rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+              class="fill-gray-50 dark:fill-gray-800"></path>
+    </svg>
+</div>
+<section id="projects" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+                <h2 class="text-4xl font-bold text-sf-dark dark:text-white mb-4">
+                    Proyectos <span class="text-sf-blue">Destacados</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl">
+                    Una selección de mis contribuciones técnicas y soluciones de arquitectura.
+                </p>
+            </div>
+            <a href="https://github.com/tu-usuario" target="_blank" class="text-sf-blue dark:text-sf-light font-bold flex items-center gap-2 hover:underline">
+                Ver GitHub 
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {projects.map((project) => (
+                <div class="group bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-700 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-sf-blue/10 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </div>
+
+                    <div class="p-8 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-sf-dark dark:text-white mb-3 group-hover:text-sf-blue transition-colors">
+                                {project.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                {project.tech.map((t) => (
+                                    <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-300 rounded-md">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            <a href={project.link} target="_blank" class="inline-flex items-center gap-2 text-sf-blue dark:text-sf-light font-bold text-sm group/link">
+                                Ver Repositorio
+                                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+<div class="w-full overflow-hidden leading-[0] bg-gray-100/50 dark:bg-gray-800">
+    <svg class="relative block w-[calc(100%+1.3px)] h-[50px] rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+              class="fill-gray-100 dark:fill-gray-700"></path>
+    </svg>
+</div>

@@ -1,29 +1,59 @@
 ---
 // src/components/ExperienceTimeline.astro
+
+// 1. Definimos el set de información (puedes mover esto a un JSON externo luego)
+const experiences = [
+    {
+        role: "Senior Manager & Architect",
+        company: "Consultora Big 4",
+        period: "2020 - Presente",
+        description: "Liderando transformaciones digitales multi-cloud y arquitectura técnica compleja.",
+        isCurrent: true
+    },
+    {
+        role: "Salesforce Lead Developer",
+        company: "Tech Startup",
+        period: "2017 - 2020",
+        description: "Implementación de CI/CD, gobierno de código y desarrollo de LWC complejos para aplicaciones financieras.",
+        isCurrent: false
+    },
+    {
+        role: "Salesforce Developer",
+        company: "Cloud Partner",
+        period: "2015 - 2017",
+        description: "Configuración avanzada de Sales & Service Cloud y automatización con Apex/Flow.",
+        isCurrent: false
+    }
+];
 ---
+
 <div class="relative">
     <div class="sticky top-24">
-        <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-3 transition-colors">
+        <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3 transition-colors">
              <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Experiencia Laboral
         </h2>
         <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors">
             <div class="space-y-0">
                 
-                <div class="relative pl-8 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-sf-blue dark:bg-sf-light ring-4 ring-white dark:ring-gray-800 shadow-sm group-hover:scale-125 transition-transform"></div>
-                    
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Senior Manager & Architect</h3>
-                    <p class="text-sf-blue dark:text-sf-light font-medium mb-2">Consultora Big 4 | 2020 - Presente</p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Liderando transformaciones digitales multi-cloud.</p>
-                </div>
-                
-                <div class="relative pl-8 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-sf-blue dark:bg-sf-light ring-4 ring-white dark:ring-gray-800 shadow-sm group-hover:scale-125 transition-transform"></div>
-                    
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Salesforce Lead Developer</h3>
-                    <p class="text-sf-blue dark:text-sf-light font-medium mb-2">Tech Startup | 2017 - 2020</p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Implementación de CI/CD y desarrollo de LWC complejos.</p>
-                </div>
+                {experiences.map((job) => (
+                    <div class="relative pl-8 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
+                        
+                        <div class={`absolute -left-[9px] top-0 w-4 h-4 rounded-full ring-4 ring-white dark:ring-gray-800 shadow-sm group-hover:scale-125 transition-transform ${job.isCurrent ? 'bg-sf-blue dark:bg-sf-light' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
+                        
+                        <h3 class="text-xl font-bold text-sf-dark dark:text-white group-hover:text-sf-blue dark:group-hover:text-sf-light transition-colors">
+                            {job.role}
+                        </h3>
+                        
+                        <p class="text-sf-blue dark:text-sf-light font-medium mb-2">
+                            {job.company} | <span class="text-gray-500 dark:text-gray-400">{job.period}</span>
+                        </p>
+                        
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                            {job.description}
+                        </p>
+                    </div>
+                ))}
+
             </div>
         </div>
     </div>
