@@ -1,19 +1,33 @@
 ---
 // src/components/ThemeToggle.astro
-// Eliminamos los iconos del frontmatter para que Astro no los trate como props,
-// aunque esto no es un error. Simplemente es más limpio.
 ---
 <button id="theme-toggle" aria-label="Cambiar tema de color" 
-    class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+    class="p-2.5 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-yellow-400 transition-all duration-300 active:scale-90 flex items-center justify-center w-11 h-11 overflow-hidden"
 >
-    <span class="light-icon">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-  </svg>
-    </span>
-    <span class="dark-icon hidden">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-  </svg>
-    </span>
+    <div class="relative w-6 h-6">
+        <span class="light-icon absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out dark:-rotate-90 dark:scale-0 dark:opacity-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+        </span>
+        
+        <span class="dark-icon absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out scale-0 rotate-90 opacity-0 dark:rotate-0 dark:scale-100 dark:opacity-100 hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+        </span>
+    </div>
 </button>
+
+<style>
+    /* Forzamos que el botón tenga un tamaño fijo para evitar saltos de layout */
+    #theme-toggle {
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Respetamos tu clase .hidden que el JS quita/pone, 
+       pero aseguramos que cuando NO tenga .hidden, use flex para centrar */
+    .dark-icon:not(.hidden) {
+        display: flex;
+    }
+</style>

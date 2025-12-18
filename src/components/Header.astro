@@ -6,7 +6,8 @@ import logoImg from '../assets/logo.png';
 ---
 
 <div id="app-header">
-<nav class="w-full top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-gray-950/90 border-b-2 border-sf-blue shadow-sf transition-all duration-500">        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="w-full top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-gray-950/90 border-b-2 border-sf-blue shadow-sf transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
@@ -17,13 +18,17 @@ import logoImg from '../assets/logo.png';
                         Impulsa<span class="text-sf-blue dark:text-sf-light">Force</span>
                      </span>
                 </div>
-                
+                <!--
                 <div class="hidden md:flex flex-grow justify-center">
-                    <div class="flex space-x-10">
+                    <div class="flex items-center space-x-10">
                         <a href="#inicio" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Inicio</a>
-                        <a href="#contact" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Contactar</a>
+                        
+                <a href="#contact" class="px-3.5 py-2.5 bg-sf-blue text-white rounded font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-sf-blue/20 transition-all transform hover:-translate-y-1">
+                    Contactar
+                </a>
                     </div>
                 </div>
+                -->
                 
                 <div class="flex items-center space-x-2"> 
                     <SocialIcons />
@@ -39,26 +44,18 @@ import logoImg from '../assets/logo.png';
             </div>
         </div>
         
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl">
-            <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Inicio
                 </a>
-                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                    Contactar
-                </a>
+                
+                <div class="px-3 pt-2">
+                    <a href="#contact" class="flex items-center justify-center w-full px-4 py-4 rounded-xl bg-sf-blue text-white font-bold text-center shadow-md active:scale-[0.98] transition-all">
+                        Contactar
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 </div>
-
-<script>
-    const btn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-
-    if (btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    }
-</script>
