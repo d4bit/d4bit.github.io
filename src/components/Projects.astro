@@ -1,19 +1,22 @@
 ---
 // src/components/Projects.astro
+import thumbImg2 from '../assets/thumbnail2.png';
+import thumbImg1 from '../assets/thumbnail1.png';
+
 const projects = [
     {
-        title: "Salesforce LWC E-Commerce",
-        description: "Plataforma de comercio electrónico construida íntegramente con Lightning Web Components y headless commerce.",
-        tech: ["LWC", "Apex", "SOQL"],
-        link: "https://github.com/tu-usuario/proyecto-1",
-        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+        title: "Sheets Rename Automation Tool",
+        description: "Una herramienta en Python que automatiza la renombración de archivos en Google Drive basándose en datos extraídos de hojas de cálculo de Google Sheets, mejorando la organización y eficiencia del flujo de trabajo.",
+        tech: ["Python", "PDF", "Interfaces"],
+        link: "https://github.com/d4bit/SheetsRename",
+        image: thumbImg1.src
     },
     {
-        title: "MuleSoft Integration Engine",
-        description: "Middleware para sincronización de datos en tiempo real entre SAP y Salesforce Service Cloud.",
-        tech: ["MuleSoft", "DataWeave", "AnyPoint"],
-        link: "https://github.com/tu-usuario/proyecto-2",
-        image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+        title: "FreeCram Question Scrapper",
+        description: "Este proyecto en Node.js automatiza la extracción de preguntas y respuestas web para generar archivos JSON organizados y una plantilla de Excel con calificación automática para autoevaluación.",
+        tech: ["Node.js", "Scrapping", "csv"],
+        link: "https://github.com/d4bit/FreecramQuestionScraper",
+        image: thumbImg2.src
     },
     {
         title: "Force.com DevOps Tool",
