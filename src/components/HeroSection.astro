@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import avionetaImg from '../assets/airplane.png';
 import profileImg from '../assets/avatar.jpg';
 ---
-<section id="inicio" class="pt-24 lg:pt-0 min-h-screen flex items-center pb-12 relative overflow-hidden transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
+<section id="home" class="pt-24 lg:pt-0 min-h-screen flex items-center pb-12 relative overflow-hidden transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
     
     <div class="absolute inset-0 z-0 pointer-events-none">
         <img 
@@ -18,7 +18,7 @@ import profileImg from '../assets/avatar.jpg';
         <div class="avioneta-container absolute top-1/3 left-[-100px]">
             <div class="flex flex-col items-center">
                 <div class="w-16 h-16 -rotate-12 opacity-50">
-                    <img src={avionetaImg.src} alt="avioneta" class="w-full h-full object-contain" />
+                    <img src={avionetaImg.src} alt="airplane" class="w-full h-full object-contain" />
                 </div>
                 <div class="w-24 h-[1px] bg-gradient-to-l from-sf-blue/20 to-transparent mt-1 mr-12"></div>
             </div>
@@ -29,36 +29,36 @@ import profileImg from '../assets/avatar.jpg';
         
         <div class="space-y-6 lg:space-y-8 animate-fade-in-up z-10 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">            
             <div class="space-y-2">
-                <p class="text-sf-blue font-bold tracking-[0.3em] uppercase text-[10px] lg:text-xs mb-4 opacity-80">Portfolio Profesional</p>
+                <p class="text-sf-blue font-bold tracking-[0.3em] uppercase text-[10px] lg:text-xs mb-4 opacity-80">Professional Portfolio</p>
                 <h1 class="flex flex-col">
-                    <span class="text-4xl lg:text-6xl font-black text-sf-dark dark:text-white tracking-tight leading-none transition-colors">
+                    <span class="text-4xl lg:text-6xl font-black text-sf-dark dark:text-white tracking-tight leading-none transition-colors inline-flex items-center gap-3 justify-center lg:justify-start">
                         David Román
                     </span>
                     <span class="mt-3 lg:mt-4 text-lg lg:text-2xl text-sf-blue dark:text-sf-light uppercase">
-                        Salesforce Developer
+                       Senior Salesforce Developer
                     </span>
                 </h1>
             </div>
 
             <div class="max-w-lg space-y-4 lg:space-y-6">
                 <p class="text-base lg:text-lg text-gray-600 dark:text-white/70 leading-relaxed border-l-0 lg:border-l-4 border-sf-blue pl-0 lg:pl-4 transition-colors">
-                    Especialista en el diseño de arquitecturas robustas y escalables. Enfoque centrado en la optimización de procesos críticos de negocio dentro del ecosistema Salesforce.
+                    Specializing in the design of robust and scalable architectures. Focused on optimizing critical business processes within the Salesforce ecosystem.
                 </p>
                 
                 <p class="text-sm lg:text-md text-gray-500 dark:text-white/60 italic pl-0 lg:pl-4">
-                    🚀 Fundador de <a href="https://d4bit.github.io" target="_blank" class="text-sf-blue font-bold hover:underline">Impulsaforce</a>, comunidad hispana dedicada a la formación y crecimiento profesional en Salesforce.
+                    🚀 Founder of <a href="https://d4bit.github.io" target="_blank" class="text-sf-blue font-bold hover:underline">Impulsaforce</a>, a Hispanic community dedicated to Salesforce training and professional growth.
                 </p>
             </div>
 
             <div class="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
-                <a href="/tu-cv.pdf" download class="inline-flex items-center gap-2 px-6 py-3 lg:px-8 lg:py-3.5 bg-sf-dark text-white rounded-xl font-semibold hover:opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-1 text-sm lg:text-base">
+                <a href="/your-cv.pdf" download class="inline-flex items-center gap-2 px-6 py-3 lg:px-8 lg:py-3.5 bg-sf-dark text-white rounded-xl font-semibold hover:opacity-90 hover:shadow-lg transition-all transform hover:-translate-y-1 text-sm lg:text-base">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                    Descargar CV
+                    Download CV
                 </a>
 
                 <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 lg:px-8 lg:py-3.5 bg-sf-blue text-white rounded-xl font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-sf-blue/30 transition-all transform hover:-translate-y-1 text-sm lg:text-base">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    Contactar
+                    Contact Me
                 </a>
             </div>
         </div>
@@ -77,20 +77,20 @@ import profileImg from '../assets/avatar.jpg';
                         </div>
                         <div>
                             <p class="text-lg lg:text-2xl font-bold leading-none text-sf-dark dark:text-sf-light">+4</p>
-                            <p class="text-[8px] lg:text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase mt-1 tracking-tight">años</p>
+                            <p class="text-[8px] lg:text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase mt-1 tracking-tight">years</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="absolute -bottom-6 -right-2 lg:-bottom-8 lg:-right-4 z-30 bg-gray-900 dark:bg-sf-blue text-white p-3 lg:p-5 rounded-xl lg:rounded-2xl shadow-2xl animate-float-medium max-w-[140px] lg:max-w-[180px]">
                     <p class="text-2xl lg:text-4xl font-bold text-sf-blue dark:text-white mb-1">13</p>
-                    <p class="text-[9px] lg:text-xs font-medium text-blue-100 leading-tight uppercase tracking-wider">Certificaciones Salesforce</p>
+                    <p class="text-[9px] lg:text-xs font-medium text-blue-100 leading-tight uppercase tracking-wider">Salesforce Certs</p>
                 </div>
 
                 <div class="absolute top-10 -right-4 lg:top-12 lg:-right-10 z-20 bg-white dark:bg-gray-800 p-2 lg:p-4 rounded-xl shadow-xl animate-float-medium border border-gray-100 dark:border-gray-700 transform rotate-3">
                     <div class="text-center">
                         <p class="text-lg lg:text-2xl font-bold text-sf-blue dark:text-sf-light">+30</p>
-                        <p class="text-[8px] lg:text-[10px] text-gray-400 dark:text-gray-300 uppercase font-bold tracking-wider">Proyectos</p>
+                        <p class="text-[8px] lg:text-[10px] text-gray-400 dark:text-gray-300 uppercase font-bold tracking-wider">Projects</p>
                     </div>
                 </div>
 
@@ -113,7 +113,6 @@ import profileImg from '../assets/avatar.jpg';
 </section>
 
 <style>
-    /* ... (se mantienen los estilos de animación iguales) ... */
     .avioneta-container { animation: fly-across 30s linear infinite; }
     @keyframes fly-across {
         0% { transform: translate(-10vw, 0) rotate(5deg); opacity: 0; }

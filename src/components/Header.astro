@@ -3,6 +3,7 @@
 import SocialIcons from './SocialIcons.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import logoImg from '../assets/logo.png';
+import LanguageToggle from './LanguageToggle.astro';
 ---
 
 <div id="app-header">
@@ -21,7 +22,7 @@ import logoImg from '../assets/logo.png';
                 
                 <div class="hidden md:flex flex-grow justify-center">
                     <div class="flex items-center space-x-10">
-                        <a href="/" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Inicio</a>
+                        <a href="/" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Home</a>
                         <a href="/blog" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Blog</a>
                     </div>
                 </div>
@@ -30,6 +31,7 @@ import logoImg from '../assets/logo.png';
                 <div class="flex items-center space-x-2"> 
                     <SocialIcons />
                     <ThemeToggle />
+                    <LanguageToggle />
                     
                     <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-sf-dark rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -44,7 +46,7 @@ import logoImg from '../assets/logo.png';
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden">
             <div class="px-4 pt-2 pb-6 space-y-3">
                 <a href="/" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                    Inicio
+                    Home
                 </a>
                 <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
                     Blog
@@ -59,15 +61,15 @@ import logoImg from '../assets/logo.png';
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-      // Alterna la clase 'hidden' para mostrar/ocultar
+      // Toggle 'hidden' class to show/hide
       mobileMenu.classList.toggle('hidden');
       
-      // Opcional: Cambiar el atributo aria-expanded para accesibilidad
+      // Optional: Change aria-expanded attribute for accessibility
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
     });
 
-    // Cerrar el menú si se hace clic en un enlace (útil en SPAs)
+    // Close menu if a link is clicked (useful for SPAs)
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {

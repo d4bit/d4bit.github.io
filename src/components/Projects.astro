@@ -6,23 +6,23 @@ import thumbImg1 from '../assets/thumbnail1.png';
 const projects = [
     {
         title: "Sheets Rename Automation Tool",
-        description: "Una herramienta en Python que automatiza la renombración de archivos en Google Drive basándose en datos extraídos de hojas de cálculo de Google Sheets, mejorando la organización y eficiencia del flujo de trabajo.",
+        description: "A Python tool that automates file renaming in Google Drive based on data extracted from Google Sheets, significantly improving organization and workflow efficiency.",
         tech: ["Python", "PDF", "Interfaces"],
         link: "https://github.com/d4bit/SheetsRename",
         image: thumbImg1.src
     },
     {
         title: "FreeCram Question Scrapper",
-        description: "Este proyecto en Node.js automatiza la extracción de preguntas y respuestas web para generar archivos JSON organizados y una plantilla de Excel con calificación automática para autoevaluación.",
+        description: "This Node.js project automates the extraction of web questions and answers to generate organized JSON files and an auto-grading Excel template for self-assessment.",
         tech: ["Node.js", "Scrapping", "csv"],
         link: "https://github.com/d4bit/FreecramQuestionScraper",
         image: thumbImg2.src
     },
     {
         title: "Force.com DevOps Tool",
-        description: "CLI personalizada para automatizar despliegues de metadatos y validaciones de código en orgs de Salesforce.",
+        description: "Custom CLI designed to automate metadata deployments and code validations across Salesforce organizations.",
         tech: ["Node.js", "SFDX", "GitHub Actions"],
-        link: "https://github.com/tu-usuario/proyecto-3",
+        link: "https://github.com/d4bit/proyecto-3",
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
     }
 ];
@@ -39,14 +39,14 @@ const projects = [
         <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
             <div>
                 <h2 class="text-4xl font-bold text-sf-dark dark:text-white mb-4">
-                    Proyectos <span class="text-sf-blue">Destacados</span>
+                    Featured <span class="text-sf-blue">Projects</span>
                 </h2>
                 <p class="text-gray-600 dark:text-gray-400 max-w-xl">
-                    Una selección de mis contribuciones técnicas y soluciones de arquitectura.
+                    A selection of my technical contributions and architectural solutions.
                 </p>
             </div>
             <a href="https://github.com/d4bit" target="_blank" class="text-sf-blue dark:text-sf-light font-bold flex items-center gap-2 hover:underline">
-                Ver GitHub 
+                View GitHub 
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
         </div>
@@ -85,7 +85,7 @@ const projects = [
                             
                             <div class="inline-flex items-center gap-2 text-sf-blue dark:text-sf-light font-bold text-sm group/link">
                                 <a href={project.link} target="_blank" class="after:absolute after:inset-0">
-                                    Ver Repositorio
+                                    View Repository
                                 </a>
                                 <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
