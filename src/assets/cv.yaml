@@ -1,0 +1,247 @@
+cv:
+  name: "David Román Castellano"
+  location: "Remote, Spain"
+  email: "davidromancastellano@gmail.com"
+  website: "https://d4bit.github.io"
+  social_networks:
+    - network: "LinkedIn"
+      username: "dabitforce"
+  sections:
+    summary:
+      - |
+        Salesforce Developer with 4 years of experience designing scalable and secure solutions within consulting environments.  Specialized in Apex, Lightning Web Components, integrations, data architecture, and process automation.  Proven ability to lead technical teams, define architectures, and deliver high-impact solutions across multiple industries.
+    experience:
+      - company: "Sirocco Group"
+        position: "Salesforce Developer"
+        location: "Remote, Spain"
+        start_date: "2025-12"
+        end_date: "present"
+        highlights:
+          - "Worked on an international client project within a consulting environment, delivering scalable Salesforce solutions."
+          - "Developed and customized applications using Apex and Lightning Web Components."
+          - "Implemented Salesforce Sales Cloud and Service Cloud functionalities, including complex Flows and integrations."
+          - "Collaborated with cross-functional teams to enhance system performance and user experience."
+      - company: "Inetum"
+        position: "Salesforce Architect & Technical Lead"
+        location: "Remote, Spain"
+        start_date: "2025-06"
+        end_date: "2025-12"
+        highlights:
+          - "Worked as a technical reference for Salesforce architecture, designing scalable and secure solutions aligned with business requirements."
+          - "Provided guidance to technical teams and ensured best development practices."
+          - "Collaborated with stakeholders to define architectural decisions, integrations, and system evolution."
+      - company: "Omega CRM Consulting"
+        position: "Salesforce Developer - Technical Lead"
+        location: "Remote, Spain"
+        start_date: "2024-12"
+        end_date: "2025-06"
+        highlights:
+          - "Led the design and development of advanced Salesforce solutions, optimizing critical business processes."
+          - "Collaborated with consulting teams to deliver customized technical solutions. Acted as code reviewer and mentor for junior team members."
+      - company: "Omega CRM Consulting"
+        position: "Salesforce Developer - Technical Consultant"
+        location: "Remote, Spain"
+        start_date: "2023-01"
+        end_date: "2024-11"
+        highlights:
+          - "Designed and implemented integrations and automations for clients in various sectors."
+          - "Contributed to data migrations, system configuration, and secure environments."
+          - "Developed custom Apex and LWC components following Salesforce best practices."
+      - company: "Omega CRM Consulting"
+        position: "Salesforce Developer"
+        location: "Remote, Spain"
+        start_date: "2022-03"
+        end_date: "2023-01"
+        highlights:
+          - "Participated in process automation projects and Salesforce customization."
+          - "Supported development teams in delivering scalable, maintainable solutions."
+    education:
+      - institution: "University of Granada"
+        area: "Computer Engineering"
+        degree: "Bachelor's Degree"
+        location: "Granada, Spain"
+        start_date: "2017-09"
+        end_date: "2021-07"
+        highlights:
+          - "Google Developer Student Clubs: Core Team Member (2021)."
+          - "Google Developer Student Clubs: Core Team Member (2020)."
+    certifications:
+      - label: Salesforce Accredited Professional - Process Automation
+        details: "2024"
+      - label: Salesforce Certified Agentforce Specialist
+        details: "2024"
+      - label: Salesforce Certified Service Cloud Consultant
+        details: "2024"
+      - label: Salesforce Certified AI Associate
+        details: "2024"
+      - label: Salesforce Certified Application Architect
+        details: "2023"
+      - label: Salesforce Certified Platform Developer II
+        details: "2023"
+      - label: Salesforce Certified Sharing & Visibility Architect
+        details: "2023"
+      - label: Salesforce Certified Associate
+        details: "2023"
+      - label: Salesforce Certified Data Architect
+        details: "2023"
+      - label: Salesforce Certified JavaScript Developer I
+        details: "2023"
+      - label: Salesforce Certified Administrator
+        details: "2023"
+      - label: Salesforce Certified Platform App Builder
+        details: "2023"
+      - label: Salesforce Certified Platform Developer I
+        details: "2022"
+    skills:
+      - label: "Salesforce Expertise"
+        details: "Apex Classes & Triggers, Lightning Web Components, SOQL, Salesforce Flows, Business Process Automation."
+      - label: "Architecture & DevOps"
+        details: "Salesforce Architecture (Application, Data, Security), CI/CD, Git, Pipelines Deployment, Visibility & Security."
+      - label: "Clouds & Tools"
+        details: "Sales, Service, Field Service, Health, Financial & Experience Cloud, Agentforce."
+      - label: "Languages"
+        details: "Spanish (Native), English (Advanced), Italian (Elementary)."
+design:
+  theme: "engineeringresumes"
+  page:
+    size: "us-letter"
+    top_margin: "2cm"
+    bottom_margin: "2cm"
+    left_margin: "2cm"
+    right_margin: "2cm"
+    show_page_numbering: false
+    show_last_updated_date: true
+  colors:
+    text: "rgb(0, 0, 0)"
+    name: "rgb(0, 0, 0)"
+    connections: "rgb(0, 0, 0)"
+    section_titles: "rgb(0, 0, 0)"
+    links: "rgb(0, 0, 0)"
+    last_updated_date_and_page_numbering: "rgb(128, 128, 128)"
+  text:
+    font_family: "XCharter"
+    font_size: "10pt"
+    leading: "0.6em"
+    alignment: "justified"
+    date_and_location_column_alignment: "right"
+  links:
+    underline: true
+    use_external_link_icon: false
+  header:
+    name_font_family: "XCharter"
+    name_font_size: "25pt"
+    name_bold: false
+    small_caps_for_name: false
+    photo_width: "3.5cm"
+    vertical_space_between_name_and_connections: "0.7cm"
+    vertical_space_between_connections_and_first_section: "0.7cm"
+    horizontal_space_between_connections: "0.5cm"
+    connections_font_family: "XCharter"
+    separator_between_connections: "|"
+    use_icons_for_connections: false
+    use_urls_as_placeholders_for_connections: true
+    make_connections_links: true
+    alignment: "center"
+  section_titles:
+    type: "with-full-line"
+    font_family: "XCharter"
+    font_size: "1.2em"
+    bold: true
+    small_caps: false
+    line_thickness: "0.5pt"
+    vertical_space_above: "0.55cm"
+    vertical_space_below: "0.3cm"
+  entries:
+    date_and_location_width: "4.15cm"
+    left_and_right_margin: "0cm"
+    horizontal_space_between_columns: "0.1cm"
+    vertical_space_between_entries: "0.4cm"
+    allow_page_break_in_sections: true
+    allow_page_break_in_entries: true
+    short_second_row: false
+    show_time_spans_in: []
+  highlights:
+    bullet: "•"
+    nested_bullet: "-"
+    top_margin: "0.25cm"
+    left_margin: "0cm"
+    vertical_space_between_highlights: "0.19cm"
+    horizontal_space_between_bullet_and_highlight: "0.3em"
+    summary_left_margin: "0cm"
+  entry_types:
+    one_line_entry:
+      template: "**LABEL:** DETAILS"
+    education_entry:
+      main_column_first_row_template: "**INSTITUTION**, DEGREE in AREA -- LOCATION"
+      degree_column_template:
+      degree_column_width: "1cm"
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: "DATE"
+    normal_entry:
+      main_column_first_row_template: "**NAME** -- **LOCATION**"
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: "DATE"
+    experience_entry:
+      main_column_first_row_template: "**POSITION**, COMPANY -- LOCATION"
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: "DATE"
+    publication_entry:
+      main_column_first_row_template: "**TITLE**"
+      main_column_second_row_template: |-
+        AUTHORS
+        URL (JOURNAL)
+      main_column_second_row_without_journal_template: |-
+        AUTHORS
+        URL
+      main_column_second_row_without_url_template: |-
+        AUTHORS
+        JOURNAL
+      date_and_location_column_template: "DATE"
+locale:
+  language: "en"
+  phone_number_format: "national"
+  page_numbering_template: "NAME - Page PAGE_NUMBER of TOTAL_PAGES"
+  last_updated_date_template: "Last updated in TODAY"
+  date_template: "MONTH_ABBREVIATION YEAR"
+  month: "month"
+  months: "months"
+  year: "year"
+  years: "years"
+  present: "present"
+  to: "–"
+  abbreviations_for_months:
+    - "Jan"
+    - "Feb"
+    - "Mar"
+    - "Apr"
+    - "May"
+    - "June"
+    - "July"
+    - "Aug"
+    - "Sept"
+    - "Oct"
+    - "Nov"
+    - "Dec"
+  full_names_of_months:
+    - "January"
+    - "February"
+    - "March"
+    - "April"
+    - "May"
+    - "June"
+    - "July"
+    - "August"
+    - "September"
+    - "October"
+    - "November"
+    - "December"
+rendercv_settings:
+  date: "2026-01-09"
+  bold_keywords: []
+  sort_entries: "none"
