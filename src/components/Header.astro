@@ -1,0 +1,80 @@
+---
+// src/components/Header.astro
+import SocialIcons from './SocialIcons.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import logoImg from '../assets/logo.png';
+import LanguageToggle from './LanguageToggle.astro';
+---
+
+<div id="app-header">
+    <nav class="w-full top-0 z-50 backdrop-blur-md bg-gray-100/50 dark:bg-gray-900 dark:text-white border-b-2 border-sf-blue shadow-sf transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 flex items-center justify-center text-white font-bold text-xl">
+                            <img src={logoImg.src} alt="ImpulsaForce Logo" class="object-contain" />
+                    </div>
+                    <span class="font-bold text-xl text-sf-dark dark:text-white tracking-tight">
+                        Impulsa<span class="text-sf-blue dark:text-sf-light">Force</span>
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex flex-grow justify-center">
+                    <div class="flex items-center space-x-10">
+                        <a href="/" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Home</a>
+                        <a href="/blog" class="text-sf-dark dark:text-white hover:text-sf-blue dark:hover:text-sf-light font-medium transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+                
+                
+                <div class="flex items-center space-x-2"> 
+                    <SocialIcons />
+                    <ThemeToggle />
+                    <LanguageToggle />
+                    
+                    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-sf-dark rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="/" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    Home
+                </a>
+                <a href="/blog" class="block px-3 py-3 rounded-md text-base font-medium text-sf-dark dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    Blog
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      // Toggle 'hidden' class to show/hide
+      mobileMenu.classList.toggle('hidden');
+      
+      // Optional: Change aria-expanded attribute for accessibility
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+    });
+
+    // Close menu if a link is clicked (useful for SPAs)
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>

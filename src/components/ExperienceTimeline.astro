@@ -1,0 +1,88 @@
+---
+// src/components/ExperienceTimeline.astro
+
+const experiences = [
+    {
+        role: "Salesforce Developer",
+        company: "SIROCCO GROUP",
+        period: "12/2025 - Present",
+        logo: "https://pbcdn1.podbean.com/imglogo/image-logo/8941019/sirocco_logo_02.png",
+        description: "Development of scalable solutions for international clients under SAFe methodology. Specialized in Apex, LWC, and complex integrations with deployment via Copado.",
+        isCurrent: true
+    },
+    {
+        role: "Salesforce Architect & Technical Lead",
+        company: "INETUM",
+        period: "06/2025 - 12/2025",
+        logo: "https://www.inetum.com//themes/custom/web_ui/favicon.ico",
+        description: "Technical reference in Salesforce architecture, designing secure and scalable solutions. Team leadership and definition of CI/CD strategies and system evolution.",
+        isCurrent: false
+    },
+    {
+        role: "Technical Lead",
+        company: "OMEGA CRM CONSULTING",
+        period: "12/2024 - 06/2025",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Lead in designing advanced solutions integrating Agentforce. Mentoring junior profiles, optimizing critical processes, and code review under CI/CD standards.",
+        isCurrent: false
+    },
+    {
+        role: "Technical Consultant & Developer",
+        company: "OMEGA CRM CONSULTING",
+        period: "01/2023 - 11/2024",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Implementation of multi-sector automations and integrations. Responsible for data migrations, secure environment configuration, and advanced development in Apex and LWC.",
+        isCurrent: false
+    },
+    {
+        role: "Salesforce Developer",
+        company: "OMEGA CRM CONSULTING",
+        period: "03/2022 - 01/2023",
+        logo: "https://cepyme500.s3.eu-west-1.amazonaws.com/ed8451dbeaad36312559934dc8f6eabb.png",
+        description: "Platform customization and business process automation focused on Sales and Service Cloud, ensuring maintainable and scalable solutions.",
+        isCurrent: false
+    }
+];
+---
+
+<div class="relative">
+    <div class="sticky top-24">
+        <h2 class="text-3xl font-bold mb-8 text-sf-dark dark:text-white flex items-center gap-3 transition-colors">
+             <span class="w-8 h-1 bg-sf-blue rounded-full"></span> Work Experience
+        </h2>
+        <div class="bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 transition-colors">
+            <div class="space-y-0">
+                
+                {experiences.map((job) => (
+                    <div class="relative pl-10 pb-10 border-l-2 border-sf-blue/20 dark:border-sf-blue/30 last:border-0 hover:border-sf-blue dark:hover:border-sf-light transition-colors group">
+                        
+                        <div class={`absolute -left-[9px] top-2 w-4 h-4 rounded-full ring-4 ring-white dark:ring-gray-900 shadow-sm group-hover:scale-125 transition-transform ${job.isCurrent ? 'bg-sf-blue dark:bg-sf-light' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden p-1 group-hover:border-sf-blue/50 transition-colors">
+                                <img src={job.logo} alt={job.company} class="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <h3 class="text-xl font-bold text-sf-dark dark:text-white group-hover:text-sf-blue dark:group-hover:text-sf-light transition-colors leading-tight">
+                                    {job.role}
+                                </h3>
+                                
+                                <p class="text-sf-blue dark:text-sf-light font-semibold text-sm mt-1">
+                                    {job.company} <span class="mx-1 text-gray-300 dark:text-gray-600">|</span> <span class="text-gray-500 dark:text-gray-400 font-medium">{job.period}</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                                {job.description}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+---
+// src/components/Projects.astro
+import thumbImg2 from '../assets/thumbnail2.png';
+import thumbImg1 from '../assets/thumbnail1.png';
+import thumbImg3 from '../assets/thumbnail3.png';
+
+
+const projects = [
+    {
+        title: "Sheets Rename Automation Tool",
+        description: "A Python tool that automates file renaming in Google Drive based on data extracted from Google Sheets, significantly improving organization and workflow efficiency.",
+        tech: ["Python", "PDF", "Interfaces"],
+        link: "https://github.com/d4bit/SheetsRename",
+        image: thumbImg1.src
+    },
+    {
+        title: "FreeCram Question Scrapper",
+        description: "This Node.js project automates the extraction of web questions and answers to generate organized JSON files and an auto-grading Excel template for self-assessment.",
+        tech: ["Node.js", "Scrapping", "csv"],
+        link: "https://github.com/d4bit/FreecramQuestionScraper",
+        image: thumbImg2.src
+    },
+    {
+        title: "Astro Portfolio Website",
+        description: "A personal portfolio website built with Astro, showcasing projects and blog posts with a focus on performance, SEO, and modern web design principles.",
+        tech: ["Astro", "TailwindCSS", "JavaScript"],
+        link: "https://github.com/d4bit/d4bit.github.io",
+        image: thumbImg3.src
+    }
+];
+---
+<section id="projects" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+                <h2 class="text-4xl font-bold text-sf-dark dark:text-white mb-4">
+                    Featured <span class="text-sf-blue">Projects</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl">
+                    A selection of my technical contributions and architectural solutions.
+                </p>
+            </div>
+            <a href="https://github.com/d4bit" target="_blank" class="text-sf-blue dark:text-sf-light font-bold flex items-center gap-2 hover:underline">
+                View GitHub 
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {projects.map((project) => (
+                <div class="group relative bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-700 rounded-[2.5rem] overflow-hidden shadow-sm transition-all duration-500 flex flex-col 
+                            hover:-translate-y-2 hover:border-sf-blue dark:hover:border-sf-blue 
+                            cursor-pointer">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </div>
+
+                    <div class="p-8 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-sf-dark dark:text-white mb-3 group-hover:text-sf-blue transition-colors">
+                                {project.title}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        <div> 
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                {project.tech.map((t) => (
+                                    <span class="relative z-30 text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-300 rounded-md group-hover:bg-sf-blue/10 group-hover:text-sf-blue transition-colors">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                            
+                            <div class="inline-flex items-center gap-2 text-sf-blue dark:text-sf-light font-bold text-sm group/link">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" class="after:absolute after:inset-0">
+                                    View Repository
+                                </a>
+                                <svg class="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

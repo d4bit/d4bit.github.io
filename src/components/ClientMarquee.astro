@@ -1,0 +1,56 @@
+---
+// src/components/ClientMarquee.astro
+
+const clients = [
+    { name: 'Makito', logo: 'https://thegreenfactory.es/wp-content/uploads/2020/06/makito.png' },
+    { name: 'EDP Solar', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/EDP_2022.svg' },
+    { name: 'Toyota', logo: 'https://cdn.worldvectorlogo.com/logos/toyota-car-logo.svg' },
+    { name: 'Iberia', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Logotipo_de_Iberia.svg' },
+    { name: 'BPCE', logo: 'https://upload.wikimedia.org/wikipedia/fr/0/0a/Groupe_BPCE_%28logo%29.svg' },
+    { name: 'Damm', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Damm_logo.svg' },
+    { name: 'Northius', logo: 'https://northius.com/wp-content/uploads/2022/05/logo.svg' },
+    { name: 'Hoteles Barceló', logo: 'https://cdn.worldvectorlogo.com/logos/barcelo-hotel-group.svg' },
+    { name: 'Dorna', logo: 'https://www.dorna.com/wp-content/themes/dorna/img/logo-black.svg' },
+    { name: 'Aedas Homes', logo: 'https://informeanual.aedashomes.com/2023/assets/images/new-logo-aedas.png' },
+];
+
+const marqueeItems = [...clients, ...clients];
+
+// Configuramos una variable para el tamaño unificado
+const logoHeight = "h-12"; // Puedes cambiar a h-10, h-12 o h-16 según necesites
+---
+
+<section class="py-12 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
+    <div class="relative flex">
+        <div class="flex animate-marquee whitespace-nowrap items-center">
+            {marqueeItems.map((client) => (
+                <div class="flex-shrink-0 mx-10 group flex items-center justify-center w-40"> 
+                    <img 
+                        src={client.logo} 
+                        alt={client.name} 
+                        title={client.name}
+                        loading="lazy"
+                        class={`${logoHeight} w-auto max-w-[140px] object-contain grayscale opacity-55 group-hover:grayscale-0 group-hover:opacity-100 dark:brightness-200 dark:invert-0 transition-all duration-500 cursor-pointer filter`}
+                    />
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 30s linear infinite; /* Un poco más lento para que se lean bien los logos */
+    }
+
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+</style>
